@@ -12,16 +12,22 @@
     <header>
         <h1>🐈 喵喵去東京吧！</h1>
         <p> 2026/01/08 - 01/16 — 9 天 8 夜東京、富士山、鎌倉之旅</p>
+        
+        <div class="menu-icon" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <div class="main-layout-wrapper">
         
-        <nav>
-            <a href="#flights">航班時段</a>
-            <a href="#itinerary">行程總覽</a>
-            <a href="#food">美食地圖</a>
-            <a href="#split-bill">分帳追蹤</a>
-            <a href="#info">實用資訊</a>
+        <nav id="sidebar-nav">
+            <a href="#flights">✈️ 航班時段</a>
+            <a href="#itinerary">🗓️ 行程總覽</a>
+            <a href="#food">🍣 美食地圖</a>
+            <a href="#split-bill">💰 分帳追蹤</a>
+            <a href="#info">💡 實用資訊</a>
         </nav>
         
         <main>
@@ -211,7 +217,21 @@
                         前往分帳 App (LINE LIFF) 🔗
                     </a>
                 </div>
-             </section>
+                
+                <h3 class="mt-20">成員角色參考</h3>
+                <ul class="task-list">
+                    <li>💎 <strong>RUBY</strong></li>
+                    <li>👑 <strong>MINA</strong></li>
+                    <li>👨‍💻 <strong>PETER</strong></li>
+                    <li>🐻 <strong>BROOK</strong></li>
+                </ul>
+
+                <h3 class="mt-20">最近的費用紀錄 (範例，請同步至 LINE App)</h3>
+                <ul class="task-list bill-list">
+                    <li>【Day 2】敘敘苑燒肉 ¥12,000 | PETER 墊付</li>
+                    <li>【Day 1】Skyliner 車票 ¥5,000 | MINA 墊付</li>
+                </ul>
+            </section>
             
             <section id="info" class="section-container">
                 <h2>💡 實用資訊</h2>
@@ -222,7 +242,7 @@
                     <div class="task-list">
                         <h4>1/8 (四) - 1/12 (一)</h4>
                         <ul>
-                            <li>**1/8：☀️ 晴朗，5°C ~ 11°C</li>
+                            <li>**1/8**：☀️ 晴朗，5°C ~ 11°C</li>
                             <li>1/9：🌤️ 多雲，3°C ~ 9°C</li>
                             <li>1/10：☀️ 晴朗，4°C ~ 10°C</li>
                             <li>1/11：☀️ 晴朗，3°C ~ 8°C</li>
