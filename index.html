@@ -23,11 +23,11 @@
     <div class="main-layout-wrapper">
         
         <nav id="sidebar-nav">
-            <a href="#flights">航班時段</a>
-            <a href="#itinerary">行程總覽</a>
-            <a href="#food">美食分類</a>
-            <a href="#split-bill">分帳記錄</a>
-            <a href="#info">實用資訊</a>
+            <a href="#flights">✈️ 航班時段</a>
+            <a href="#itinerary">🗓️ 行程總覽</a>
+            <a href="#food">🍣 美食分類</a>
+            <a href="#split-bill">💰 分帳記錄</a>
+            <a href="#info">💡 實用資訊</a>
         </nav>
         
         <main>
@@ -46,8 +46,8 @@
                     <div class="task-list">
                         <h3>回程：01/16 (五) CI101</h3>
                         <ul>
-                           <strong>出發</strong>：NRT 成田國際機場 第二航廈 (14:35)</li>
-                           <strong>出發</strong>：TPE 臺灣桃園國際機場 (17:45)</li>
+                           <li><strong>出發</strong>：NRT 成田國際機場 第二航廈 (14:35)</li>
+                           <li><strong>抵達</strong>：TPE 臺灣桃園國際機場 (17:45)</li>
                         </ul>
                     </div>
                 </div>
@@ -281,6 +281,25 @@
     <footer>
         <p>© 2026 tokyo trip | meowmeow jp </p>
     </footer>
+
+    <script>
+        function toggleSidebar() {
+            const nav = document.getElementById('sidebar-nav');
+            // 在 CSS 中定義 .active 類來控制顯示/隱藏
+            nav.classList.toggle('active'); 
+        }
+
+        // 點擊連結後自動關閉側邊欄 (增進手機體驗)
+        document.querySelectorAll('#sidebar-nav a').forEach(item => {
+            item.addEventListener('click', () => {
+                const nav = document.getElementById('sidebar-nav');
+                // 檢查瀏覽器寬度，只有在手機模式 (寬度 <= 992px) 下才關閉
+                if (window.innerWidth <= 992 && nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
