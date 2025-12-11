@@ -1,45 +1,78 @@
 /* ------------------------------------------------------------------ */
-/* 新增：側邊欄、冬日配色與可愛字體 (最終版 CSS) */
+/* 湖水藍主題、側邊欄菜單與可愛字體 (最終版 CSS) */
 /* ------------------------------------------------------------------ */
 
 /* 引入可愛中文字體 (例如：懷源體 / HuaiyuanTC) */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Huaiyuan+Sans+TC&display=swap');
 
-/* 基本設定與字體 */
-body {
-    /* 主要使用 Huaiyuan Sans TC 增加可愛手寫感 */
-    font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
-    line-height: 1.7; /* 增加行距，更舒適 */
-    margin: 0;
-    padding: 0;
-    background-color: #fafafa; /* 淺雪白色背景 */
-    color: #34495e; /* 深海軍藍色字體 */
+/* 定義湖水藍主題色變數 */
+:root {
+    --primary-color: #008080; /* 主湖水藍 */
+    --accent-color: #ff6347; /* 番茄紅/暖色強調 */
+    --background-light: #f4fcfc; /* 淺色背景 */
+    --text-dark: #2c3e50; /* 深藍灰文字 */
+    --border-light: #b0c4de; /* 淺藍灰邊框 */
 }
 
-/* 標頭樣式 - 簡潔清爽 */
+/* 基本設定與字體 */
+body {
+    font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
+    line-height: 1.7; 
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light); 
+    color: var(--text-dark); 
+}
+
+/* 標頭樣式 */
 header {
-    background-color: #ffffff; /* 保持白色，模擬雪景或紙張 */
-    color: #34495e;
+    background-color: #ffffff; 
+    color: var(--text-dark);
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border-bottom: 3px solid #c0c0c0; /* 淺灰線條 */
+    border-bottom: 3px solid var(--primary-color); 
+    position: relative; /* 用於定位漢堡圖標 */
 }
 
 header h1 {
     margin: 0 0 5px 0;
     font-size: 2.5em;
-    color: #d35400; /* 暖橘色作為亮點 */
+    color: var(--primary-color); 
 }
 
 /* ------------------------------------------------------------------ */
-/* 核心佈局：側邊欄容器 */
+/* 漢堡菜單圖標樣式 (只在手機上顯示) */
+/* ------------------------------------------------------------------ */
+.menu-icon {
+    display: none; /* 預設隱藏 */
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.menu-icon div {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ------------------------------------------------------------------ */
+/* 核心佈局：側邊欄容器 (電腦版佈局) */
 /* ------------------------------------------------------------------ */
 .main-layout-wrapper {
-    display: flex; /* 啟用 Flexbox */
-    max-width: 1400px; /* 增加寬度以容納側邊欄 */
+    display: flex; 
+    max-width: 1400px; 
     margin: 0 auto;
-    padding: 20px; /* 內邊距 */
+    padding: 20px; 
 }
 
 
@@ -47,41 +80,41 @@ header h1 {
 /* 導覽列樣式 - 側邊欄 (Sidebar) */
 /* ------------------------------------------------------------------ */
 nav {
-    background-color: transparent; /* 容器背景透明 */
+    background-color: transparent; 
     padding: 0;
     text-align: left;
-    position: sticky; /* 側邊欄固定滾動 */
+    position: sticky; 
     top: 20px; 
-    z-index: 1000;
-    width: 220px; /* 側邊欄寬度 */
+    z-index: 900; 
+    width: 240px; 
     flex-shrink: 0;
     margin-right: 40px;
 }
 
 nav a {
-    color: #34495e; /* 深藍色文字 */
-    background-color: #f0f0f0; /* 淺灰色背景 */
+    color: var(--text-dark);
+    background-color: #ffffff; 
     text-decoration: none;
     padding: 12px 20px;
-    margin: 8px 0; /* 垂直間隔 */
+    margin: 8px 0; 
     border-radius: 8px; 
     transition: background-color 0.3s, color 0.3s;
     font-weight: bold;
-    display: block; /* 垂直堆疊 */
-    border: 1px solid #c0c0c0;
+    display: block; 
+    border: 1px solid var(--border-light);
 }
 
 nav a:hover {
-    background-color: #d35400; /* 暖橘色 Hover */
+    background-color: var(--primary-color); 
     color: #ffffff;
-    border-color: #d35400;
+    border-color: var(--primary-color);
 }
 
 /* 主要內容區塊 */
 main {
-    padding: 0; /* 在寬螢幕上移除主內容區塊的左右內邊距，交給 .main-layout-wrapper 控制 */
+    padding: 0; 
     max-width: 1000px;
-    flex-grow: 1; /* 佔據剩餘空間 */
+    flex-grow: 1; 
 }
 
 .section-container {
@@ -93,15 +126,15 @@ main {
 }
 
 .section-container h2 {
-    color: #d35400; /* 暖橘色標題 */
-    border-bottom: 2px solid #c0c0c0; /* 淺灰線 */
+    color: var(--primary-color); 
+    border-bottom: 2px solid var(--border-light); 
     padding-bottom: 10px;
     margin-top: 0;
 }
 
 /* 行程卡片樣式 */
 .day-card {
-    border-left: 5px solid #c0c0c0; 
+    border-left: 5px solid var(--border-light); 
     padding: 12px 18px;
     margin-bottom: 18px;
     background-color: #fcfcfc;
@@ -109,28 +142,28 @@ main {
     transition: border-color 0.3s;
 }
 .day-card:hover {
-    border-left-color: #34495e; 
+    border-left-color: var(--primary-color); 
 }
 
 .day-card h3 {
     margin-top: 0;
-    color: #34495e;
+    color: var(--text-dark);
     font-size: 1.2em;
 }
 
 /* 亮點行程卡片 */
 .day-card.highlight {
-    border-left-color: #d35400; 
-    background-color: #fff8e1; 
+    border-left-color: var(--accent-color); 
+    background-color: #fff8e1; /* 保持淺暖色 */
 }
 
 .day-card .note {
     font-style: italic;
-    color: #d35400;
+    color: var(--accent-color);
     font-weight: bold;
 }
 
-/* 待辦清單/一般列表樣式 */
+/* 待辦清單/一般列表樣式 (保持一致性) */
 .task-list {
     list-style: none;
     padding: 0;
@@ -139,16 +172,16 @@ main {
 .task-list li {
     padding: 10px 0;
     border-bottom: 1px dashed #e0e0e0;
-    color: #34495e;
+    color: var(--text-dark);
 }
 .task-list li:last-child {
     border-bottom: none;
 }
 
-/* 按鈕樣式 (使用暖橘色) */
+/* 按鈕樣式 (使用強調色) */
 .button {
     display: inline-block;
-    background-color: #d35400;
+    background-color: var(--accent-color);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -159,7 +192,7 @@ main {
 }
 
 .button:hover {
-    background-color: #e67e22;
+    background-color: #c0392b;
 }
 
 /* 航班區塊樣式 */
@@ -168,85 +201,71 @@ main {
     justify-content: space-around;
     gap: 20px;
     padding: 15px;
-    border: 1px solid #c0c0c0; 
+    border: 1px solid var(--border-light); 
     border-radius: 8px;
     margin-bottom: 15px;
     background-color: #f9f9f9; 
-}
-.flight-detail-box h3 {
-    color: #34495e;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 5px;
 }
 
 /* 頁尾樣式 */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #34495e; 
-    color: #ecf0f1;
+    background-color: var(--primary-color); 
+    color: #ffffff;
     font-size: 0.9em;
 }
 
-/* 外部連結按鈕樣式 */
-.external-link-box {
-    background-color: #f0f8ff; 
-    border: 1px solid #cceeff;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.split-button { /* 專門針對分帳按鈕 */
-    background-color: #2980b9; 
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    font-weight: bold;
-    margin-top: 10px;
-}
-.split-button:hover {
-    background-color: #3498db;
-}
 
 /* ------------------------------------------------------------------ */
-/* RWD - 手機版適應 */
+/* RWD - 手機版適應與側邊欄切換 */
 /* ------------------------------------------------------------------ */
 @media (max-width: 992px) { 
-    /* 側邊欄變為頂部橫向選單 */
+    /* 核心佈局：取消 Flexbox */
     .main-layout-wrapper {
-        flex-direction: column; /* 垂直堆疊 */
+        flex-direction: column; 
         padding: 0;
     }
-    nav {
-        position: static; /* 取消固定 */
-        width: 100%;
-        margin-right: 0;
-        padding: 10px 5px;
-        background-color: #34495e; /* 深藍色背景 */
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* 顯示漢堡圖標 */
+    .menu-icon {
         display: flex;
-        justify-content: flex-start;
-        overflow-x: auto; /* 允許橫向捲動 */
-        white-space: nowrap; /* 防止換行 */
+        z-index: 1001; /* 確保它在最上層 */
     }
+
+    /* 隱藏/顯示側邊欄 */
+    nav {
+        position: fixed; /* 固定在左側 */
+        top: 0;
+        left: -280px; /* 預設藏在左側外 */
+        width: 250px; 
+        height: 100%;
+        background-color: var(--primary-color);
+        padding: 60px 15px 20px;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        margin: 0;
+    }
+
+    /* JavaScript 會添加這個類來顯示側邊欄 */
+    nav.active {
+        left: 0;
+    }
+
     nav a {
-        display: inline-block; /* 水平排列 */
-        flex-shrink: 0;
-        margin: 5px 8px;
-        color: #ecf0f1; /* 淺色文字 */
-        background-color: transparent; /* 透明背景 */
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        margin: 10px 0;
+        border-color: rgba(255, 255, 255, 0.3);
     }
     nav a:hover {
-        background-color: #d35400; 
-        color: #ffffff;
+        background-color: var(--accent-color);
     }
+
     main {
-        padding: 20px; /* 手機上補回內邊距 */
+        padding: 10px; /* 手機上補回內邊距 */
+        width: 100%;
     }
     .flight-detail-box {
         flex-direction: column;
