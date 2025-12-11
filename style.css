@@ -32,7 +32,7 @@ header {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     border-bottom: 3px solid var(--primary-color); 
-    position: relative; /* 用於定位漢堡圖標 */
+    position: relative; 
 }
 
 header h1 {
@@ -154,7 +154,7 @@ main {
 /* 亮點行程卡片 */
 .day-card.highlight {
     border-left-color: var(--accent-color); 
-    background-color: #fff8e1; /* 保持淺暖色 */
+    background-color: #fff8e1; 
 }
 
 .day-card .note {
@@ -229,23 +229,25 @@ footer {
     
     /* 顯示漢堡圖標 */
     .menu-icon {
-        display: flex;
-        z-index: 1001; /* 確保它在最上層 */
+        display: flex; /* 顯示漢堡圖標 */
+        z-index: 1001; 
     }
 
     /* 隱藏/顯示側邊欄 */
     nav {
-        position: fixed; /* 固定在左側 */
+        position: fixed; 
         top: 0;
         left: -280px; /* 預設藏在左側外 */
         width: 250px; 
         height: 100%;
-        background-color: var(--primary-color);
+        background-color: var(--primary-color); /* 手機側邊欄背景色 */
         padding: 60px 15px 20px;
         box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
         transition: left 0.3s ease-in-out;
         z-index: 1000;
         margin: 0;
+        /* 重設菜單連結樣式 */
+        display: block; 
     }
 
     /* JavaScript 會添加這個類來顯示側邊欄 */
@@ -254,17 +256,18 @@ footer {
     }
 
     nav a {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1); /* 淺色背景，與深藍背景搭配 */
         color: #ffffff;
         margin: 10px 0;
         border-color: rgba(255, 255, 255, 0.3);
     }
     nav a:hover {
         background-color: var(--accent-color);
+        color: #ffffff;
     }
 
     main {
-        padding: 10px; /* 手機上補回內邊距 */
+        padding: 20px; 
         width: 100%;
     }
     .flight-detail-box {
