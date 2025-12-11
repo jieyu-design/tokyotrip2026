@@ -1,0 +1,141 @@
+/* 基本設定與字體 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* 標頭樣式 */
+header {
+    background-color: #f9d775; /* 搭配喵喵主題的溫暖黃色 */
+    color: #4a4a4a;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+    font-size: 2.2em;
+}
+
+/* 導覽列樣式 */
+nav {
+    background-color: #e5b95a;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #4a4a4a;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    display: inline-block; /* 讓每個連結佔用合理空間 */
+}
+
+nav a:hover {
+    background-color: #f9d775;
+}
+
+/* 主要內容區塊 */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-container {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-container h2 {
+    color: #c9514e; /* 搭配主題的紅色 */
+    border-bottom: 2px solid #f9d775;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* 行程卡片樣式 */
+.day-card {
+    border-left: 5px solid #a8a8a8;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.day-card h3 {
+    margin-top: 0;
+    color: #4e4e4e;
+}
+
+/* 亮點行程卡片 */
+.day-card.highlight {
+    border-left-color: #c9514e; /* 突出顯示 */
+    background-color: #fffbe6;
+}
+
+.day-card .note {
+    font-style: italic;
+    color: #c9514e;
+    font-weight: bold;
+}
+
+/* 待辦清單樣式 */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* 按鈕樣式 */
+.button {
+    display: inline-block;
+    background-color: #c9514e;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #a8423f;
+}
+
+/* 頁尾樣式 */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #e0e0e0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* RWD - 讓網站適應小螢幕 */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 5px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
