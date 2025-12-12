@@ -3,7 +3,7 @@
 /* ------------------------------------------------------------------ */
 
 /* 引入可愛中文字體 (例如：懷源體 / HuaiyuanTC) */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Huaiyuan+Sans+TC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Gaegu:wght@400;700&display=swap');
 
 /* 定義湖水藍主題色變數 */
 :root {
