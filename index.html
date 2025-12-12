@@ -406,16 +406,7 @@
             });
         });
         
-        // 初始化：行程表第一個項目展開
-        const itineraryContainer = document.getElementById('accordion-container-itinerary');
-        if (itineraryContainer) {
-            const firstItem = itineraryContainer.querySelector('.accordion-item');
-            if (firstItem) {
-                const firstContent = firstItem.querySelector('.accordion-content');
-                firstItem.classList.add('active');
-                firstContent.style.maxHeight = firstContent.scrollHeight + "px";
-                firstItem.querySelector('.accordion-header span').textContent = "點擊收起";
-            }
+       
         }
     </script>
 </body>
