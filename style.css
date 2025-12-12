@@ -1,422 +1,371 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇯🇵喵喵去東京吧🗻！(01/08 - 01/16)</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Huaiyuan+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+/* ------------------------------------------------------------------ */
+/* 湖水藍主題、側邊欄菜單與可愛字體 (最終版 CSS) */
+/* ------------------------------------------------------------------ */
 
-    <header>
-        <h1>🐈 喵喵去東京吧！</h1>
-        <p> 2026/01/08 - 01/16 — 9 天 8 夜東京、富士山、鎌倉之旅</p>
-        
-        <div class="menu-icon" onclick="toggleSidebar()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
+/* 引入可愛中文字體 (例如：懷源體 / HuaiyuanTC) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Huaiyuan+Sans+TC:wght@400;700&display=swap');
 
-    <div class="main-layout-wrapper">
-        
-        <nav id="sidebar-nav">
-            <a href="#flights">✈️ 航班時段</a>
-            <a href="#itinerary">🗓️ 行程總覽</a>
-            <a href="#food">🍣 美食分類</a>
-            <a href="#split-bill">💰 分帳記錄</a>
-            <a href="#info">💡 實用資訊</a>
-        </nav>
-        
-        <main>
-            
-            <section id="flights" class="section-container">
-                <h2>✈️ 來回航班資訊 (01/08 - 01/16)</h2>
-                <div class="flight-detail-box">
-                    <div class="task-list">
-                        <h3>去程：01/08 (四) CI108</h3>
-                        <ul>
-                            <li><strong>出發</strong>：TPE 臺灣桃園國際機場 第二航廈 (14:25)</li>
-                            <li><strong>抵達</strong>：NRT 成田國際機場 (18:30)</li>
-                            <li>交通：確認購買 Skyliner、地鐵三日券。</li>
-                        </ul>
-                    </div>
-                    <div class="task-list">
-                        <h3>回程：01/16 (五) CI101</h3>
-                        <ul>
-                            <li><strong>出發</strong>：NRT 成田國際機場 第二航廈 (14:35)</li>
-                            <li><strong>抵達</strong>：TPE 臺灣桃園國際機場 (17:45)</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="note">⚠️ 請提前抵達機場並注意登機時間。</p>
-            </section>
-            
-            <section id="itinerary" class="section-container">
-                <h2>🗓️ 行程總覽 (9 天)</h2>
-                <div id="accordion-container-itinerary">
-                    
-                    <div class="accordion-item active">
-                        <button class="accordion-header">
-                            <h3>Day 1 - 01/08 (四) | 抵達與住宿 <span>點擊收起</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                <strong>下午</strong>：抵達 NRT 成田機場
-                            </p>
-                            <p>
-                                <strong>晚上</strong>：前往 <a href="https://www.google.com/maps/search/The+Apartment+Hotel+by+Stylio+Yoyogi+1" target="_blank">The Apartment Hotel by Stylio Yoyogi 1</a> (抵達)
-                            </p>
-                        </div>
-                    </div>
+/* 定義湖水藍主題色變數 */
+:root {
+    --primary-color: #008080; /* 主湖水藍 */
+    --accent-color: #84C1FF; /* 番茄紅/暖色強調 */
+    --background-light: #f5f5f5; /* 淺米灰色背景 (非純白) */
+    --card-background: #D2E9FF; /* 卡片內容仍用白色以保持閱讀性 */
+    --text-dark: #2c3e50; /* 深藍灰文字 */
+    --border-light: #b0c4de; /* 淺藍灰邊框 */
+}
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3>Day 2 - 01/09 (五) | 數位藝術與澀谷 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/teamLab+Borderless+數位藝術美術館" target="_blank">teamLab Borderless 數位藝術美術館</a>
-                            </p>
-                            <p>
-                                午餐：<a href="https://www.google.com/maps/search/敘敘苑+六本木本店" target="_blank">敘敘苑 六本木本店</a> (已訂位)
-                            </p>
-                            <p>
-                                下午/傍晚：<a href="https://www.google.com/maps/search/neel神宮前" target="_blank">neel神宮前</a> → <a href="https://www.google.com/maps/search/GARIGUETTE" target="_blank">GARIGUETTE</a> → <a href="https://www.google.com/maps/search/I'm+donut+SHIBUYA" target="_blank">I'm donut ? SHIBUYA</a> → <a href="https://www.google.com/maps/search/澀谷+SKY" target="_blank">澀谷 SKY</a>
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/Afuri+Shibuya+Dōgenzaka" target="_blank">Afuri Shibuya Dōgenzaka</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3>Day 3 - 01/10 (六) | 表參道、代官山與中目黑 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/TOURNAGE+Jingumae" target="_blank">TOURNAGE Jingumae</a> → <a href="https://www.google.com/maps/search/表參道Hills" target="_blank">表參道Hills</a> → <a href="https://www.google.com/maps/search/The+Matcha+Tokyo+Omotesandō" target="_blank">The Matcha Tokyo Omotesandō</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/涉谷逛街區" target="_blank">涉谷逛街區</a> → <a href="https://www.google.com/maps/search/Shake+Shack+Shibuya" target="_blank">Shake Shack Shibuya</a> → <a href="https://www.google.com/maps/search/代官山" target="_blank">代官山</a> → <a href="https://www.google.com/maps/search/中目黑" target="_blank">中目黑</a>
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/MEAT+MAN+Roppongi" target="_blank">MEAT MAN Roppongi</a>
-                            </p>
-                        </div>
-                    </div>
+/* 基本設定與字體 */
+body {
+    font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
+    line-height: 1.7; 
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light); 
+    color: var(--text-dark); 
+}
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3>Day 4 - 01/11 (日) | 原宿與新宿購物 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/Path+Tokyo" target="_blank">Path</a> → <a href="https://www.google.com/maps/search/原宿" target="_blank">原宿</a> → <a href="https://www.google.com/maps/search/Sama+Curry+Meijijingumae" target="_blank">Sama Curry Meijijingumae</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/Ikedaya+TeaStore+Matcha" target="_blank">Ikedaya TeaStore Matcha</a> → <a href="https://www.google.com/maps/search/HARBS+LUMINE+EST新宿店" target="_blank">HARBS LUMINE EST新宿店</a> → <a href="https://www.google.com/maps/search/新宿區" target="_blank">新宿區</a>
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/東京油組總本店+西新宿組" target="_blank">東京油組總本店 西新宿組</a>
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item highlight-day">
-                        <button class="accordion-header">
-                            <h3>Day 5 - 01/12 (一) | 築地、淺草與上野 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/築地場外市場" target="_blank">築地場外市場</a> (早市) → <a href="https://www.google.com/maps/search/BONGEN+COFFEE+Tokyo+Ginza" target="_blank">BONGEN COFFEE Tokyo Ginza</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/仲見世商店街" target="_blank">仲見世商店街</a> → <a href="https://www.google.com/maps/search/淺草寺+雷門" target="_blank">淺草寺 雷門</a> → <a href="https://www.google.com/maps/search/八十八良葉舍+淺草" target="_blank">八十八良葉舍 淺草</a> → <a href="https://www.google.com/maps/search/Suzukien+Asakusa+matcha+gelato" target="_blank">Suzukien Asakusa matcha gelato</a>
-                            </p>
-                            <p>
-                                傍晚/晚餐：<a href="https://www.google.com/maps/search/上野" target="_blank">上野</a> → <a href="https://www.google.com/maps/search/上野阿美橫町" target="_blank">上野阿美橫町</a>
-                            </p>
-                            <p class="note">⚠️ 晚餐備註：考慮在百貨公司or大超市買晚餐回去煮。</p>
-                        </div>
-                    </div>
+/* 標頭樣式 */
+header {
+    background-color: var(--card-background); 
+    color: var(--text-dark);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid var(--primary-color); 
+    position: relative; 
+}
 
-                    <div class="accordion-item highlight-day">
-                        <button class="accordion-header">
-                            <h3>Day 6 - 01/13 (二) | 富士山專車一日遊 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/山中湖" target="_blank">山中湖</a> → <a href="https://www.google.com/maps/search/THE+PARK+Fujiyoshida" target="_blank">THE PARK</a> → <a href="https://www.google.com/maps/search/忍野八海" target="_blank">忍野八海</a> → <a href="https://www.google.com/maps/search/Shimoyoshida" target="_blank">Shimoyoshida</a>
-                            </p>
-                            <p>
-                                下午：<a href="https://www.google.com/maps/search/新倉富士浅間神社" target="_blank">新倉富士浅間神社</a> (要爬很多樓梯) → <a href="https://www.google.com/maps/search/產屋崎神社" target="_blank">產屋崎神社</a> → <a href="https://www.google.com/maps/search/大石公園" target="_blank">大石公園</a>
-                            </p>
-                            <p class="note">⚠️ 出發時間：早上 07:00 就要早早早出發！</p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3>Day 7 - 01/14 (三) | 鎌倉與江之島 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                午餐：<a href="https://www.google.com/maps/search/今半Ningyocho+Imahan+Shinjuku" target="_blank">今半Ningyocho Imahan Shinjuku Takashimaya</a> (尚未訂位)
-                            </p>
-                            <p>
-                                下午：<a href="https://www.google.com/maps/search/鶴岡八幡宮" target="_blank">鶴岡八幡宮</a> → <a href="https://www.google.com/maps/search/鎌倉小町通" target="_blank">鎌倉小町通</a> → <a href="https://www.google.com/maps/search/Giraffa+Curry+Pan" target="_blank">Giraffa Curry Pan</a> → <a href="https://www.google.com/maps/search/鎌倉大佛殿高德院" target="_blank">鎌倉大佛殿高德院</a> → <a href="https://www.google.com/maps/search/鎌倉高校前" target="_blank">鎌倉高校前</a> (灌籃高手)
-                            </p>
-                            <p>
-                                傍晚/晚餐：<a href="https://www.google.com/maps/search/Enoshima+Nagisa+Parking+Area" target="_blank">Enoshima Nagisa Parking Area</a> → <a href="https://www.google.com/maps/search/利久牛舌+LUMINE+EST新宿店" target="_blank">利久牛舌 LUMINE EST新宿店</a> (晚餐)
-                            </p>
-                        </div>
-                    </div>
+header h1 {
+    margin: 0 0 5px 0;
+    font-size: 2.5em;
+    color: var(--primary-color); 
+}
 
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3>Day 8 - 01/15 (四) | 日本橋與銀座美食 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/BUTTER+Hoboku+Rakunojo" target="_blank">BUTTER Hoboku Rakunojo</a> → <a href="https://www.google.com/maps/search/五代目+花山烏冬+日本橋店" target="_blank">五代目 花山烏冬 日本橋店</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/Tendon+Itsuki+Ginza" target="_blank">Tendon Itsuki Ginza</a> → <a href="https://www.google.com/maps/search/PATISSERIE+TEN&" target="_blank">PATISSERIE TEN&</a> (強強強泡芙)
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/Yakiniku+Yamashofu+Omotesando+store" target="_blank">Yakiniku Yamashofu Omotesando store</a> → <a href="https://www.google.com/maps/search/Iruca+Tokyo+Roppongi" target="_blank">Iruca Tokyo Roppongi</a> (備案：聽說很好吃，但排不進去了)
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <h3>Day 9 - 01/16 (五) | 告別東京 <span>點擊展開</span></h3>
-                        </button>
-                        <div class="accordion-content">
-                            <p>
-                                <strong>上午</strong>：<a href="https://www.google.com/maps/search/Levain+Yoyogiuehara" target="_blank">Levain</a> → 前往 NRT 成田國際機場
-                            </p>
-                            <p>
-                                <strong>下午</strong>：搭乘航班回國
-                            </p>
-                        </div>
-                    </div>
+/* ------------------------------------------------------------------ */
+/* 漢堡菜單圖標樣式 (只在手機上顯示) */
+/* ------------------------------------------------------------------ */
+.menu-icon {
+    display: none; /* 電腦版預設隱藏 */
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    justify-content: space-between;
+    flex-direction: column;
+}
 
-                </div>
-            </section>
-            
-            <section id="food" class="section-container">
-                <h2>🍣 美食分類 (餐廳與甜點清單)</h2>
-                
-                <div class="food-list">
-                    
-                    <h3>燒肉 / 壽喜燒</h3>
-                    <ul class="task-list">
-                        <li>敘敘苑 六本木本店 (Day 2 午餐) - <span class="note">已訂位</span></li>
-                        <li>MEAT MAN Roppongi (Day 3 晚餐)</li>
-                        <li>今半 Ningyocho (Day 7 午餐) - <span class="note">尚未訂位</span></li>
-                        <li>Yakiniku Yamashofu Omotesando store (Day 8 晚餐)</li>
-                    </ul>
+.menu-icon div {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
 
-                    <h3>拉麵 / 烏冬 / 天丼</h3>
-                    <ul class="task-list">
-                        <li>Afuri Shibuya Dōgenzaka (Day 2 晚餐)</li>
-                        <li>東京油組總本店 西新宿組 (Day 4 晚餐)</li>
-                        <li>五代目 花山烏冬 日本橋店 (Day 8 午餐)</li>
-                        <li>Tendon Itsuki Ginza (Day 8 午餐)</li>
-                        <li>Iruca Tokyo Roppongi (Day 8 備案) - <span class="note">聽說很好吃，但排不進去了 (可作為備案)</span></li>
-                    </ul>
-                    
-                    <h3>甜點 / 咖啡 / 抹茶</h3>
-                    <ul class="task-list">
-                        <li>The Matcha Tokyo Omotesandō (Day 3)</li>
-                        <li>HARBS LUMINE EST新宿店 (Day 4)</li>
-                        <li>Suzukien Asakusa matcha gelato (Day 5)</li>
-                        <li>BONGEN COFFEE Tokyo Ginza (Day 5)</li>
-                        <li>PATISSERIE TEN& (Day 8) - <span class="note">強強強泡芙！</span></li>
-                    </ul>
-
-                </div>
-            </section>
-
-            <section id="split-bill" class="section-container">
-                <h2>💰 分帳記錄 (Split the Bill)</h2>
-                
-                <div class="split-link-box">
-                    <h3>點擊前往App分帳</h3>
-                    
-                    <a href="https://liff.line.me/1655320992-Y8GowEpw/g/mFh5ebFybya4tdXbLRnn3a" target="_blank" class="button split-button split-jpy">
-                        日幣分帳 (JPY) 💴 🔗
-                    </a>
-
-                    <a href="https://liff.line.me/1655320992-Y8GowEpw/g/mgjxCYXDf88ohBzfVTZBwq" target="_blank" class="button split-button split-twd">
-                        台幣分帳 (TWD) 🇹🇼 🔗
-                    </a>
-                </div>
-            </section>
-            
-            <section id="info" class="section-container">
-                <h2>💡 實用資訊</h2>
-                
-                <div class="accordion-item" id="accordion-subway">
-                    <button class="accordion-header">
-                        <h3>🚇 東京地鐵指南 (72小時券資訊) <span>點擊展開</span></h3>
-                    </button>
-                    <div class="accordion-content">
-                        <h4>東京地鐵路線圖</h4>
-                        <p>點擊圖片可放大查看。</p>
-                        <a href="[請替換成地鐵圖圖片的實際網址]" target="_blank">
-                            <img src="[請替換成地鐵圖圖片的實際網址]" alt="東京地鐵路線圖" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 15px;">
-                        </a>
-
-                        <h4>72小時地鐵券 (Tokyo Subway Ticket) 不適用路線</h4>
-                        <ul class="task-list">
-                            <li><strong>所有 JR 線</strong>：包括 JR 山手線、JR 中央線等.</li>
-                            <li><strong>所有私鐵線</strong>：包括京王線、小田急線、東急線等.</li>
-                            <li><strong>部分公營路線</strong>：百合海鷗線、日暮里-舍人線、Tokyo Sakura Tram (都電荒川線).</li>
-                            <li><strong>重要提醒：</strong> 此券<strong>不適用於</strong>往返機場的 **Skyliner** (京成電鐵特急).</li>
-                            <li>✅ <strong>適用範圍：</strong> 東京 Metro (9 條線) + 都營地下鐵 (4 條線).</li>
-                        </ul>
-                    </div>
-                </div> 
-
-                <h3>☀️ 每日氣候預報 (1/8 - 1/16)</h3>
-                <p>以下為預測數據，請以出發前一天的即時預報為準：</p>
-                <div class="flight-detail-box">
-                    <div class="task-list">
-                        <h4>1/8 (四) - 1/12 (一)</h4>
-                        <ul>
-                            <li>1/8：☀️ 晴朗，5°C ~ 11°C</li>
-                            <li>1/9：🌤️ 多雲，3°C ~ 9°C</li>
-                            <li>1/10：☀️ 晴朗，4°C ~ 10°C</li>
-                            <li>1/11：☀️ 晴朗，3°C ~ 8°C</li>
-                            <li>1/12：🌤️ 多雲，2°C ~ 7°C (築地/淺草)</li>
-                        </ul>
-                    </div>
-                    <div class="task-list">
-                        <h4>1/13 (二) - 1/16 (五)</h4>
-                        <ul>
-                            <li>1/13：🥶 山區晴朗，-3°C ~ 5°C (富士山)</li>
-                            <li>1/14：☀️ 鎌倉晴朗，4°C ~ 11°C</li>
-                            <li>1/15：🌤️ 多雲，5°C ~ 12°C (銀座)</li>
-                            <li>1/16：☀️ 晴朗，3°C ~ 10°C (返程日)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 20px;"> 穿著建議與提醒</h3>
-                <ul class="task-list">
-                    <li>東京市區/鎌倉： 平均 2°C ~ 10°C，天氣晴朗乾燥為主，體感寒冷。</li>
-                    <li>富士山： 氣溫可能低於 0°C，山區風大。</li>
-                    <li>建議： 採洋蔥式穿法，內層發熱衣，中層毛衣，外層防風保暖大衣/羽絨外套。</li>
-                </ul>
-                
-                <h3>🧳 行李清單提醒</h3>
-                <ul class="task-list">
-                    <li>必備保暖： 羽絨外套、防風外套、圍巾、手套、毛帽。</li>
-                    <li>電器與卡片：護照、日圓現金、信用卡、Suica卡、充電線/行動電源.</li>
-                    <li>自備用品 (建議)：常備藥品 (止痛藥、腸胃藥、感冒藥).</li>
-                </ul>
-
-                <h3>住宿與聯繫</h3>
-                <p>
-                    飯店：The Apartment Hotel by Stylio Yoyogi 1<br>
-                    地址：〒151-0053 東京都渋谷区代々木４丁目６−4<br>
-                    入住/退房：16:00/10:00
-                </p>
-
-                <h3>東京必要緊急電話</h3>
-                <ul class="task-list">
-                    <li>警察 (Police)：110</li>
-                    <li>救護車/火警 (Ambulance/Fire)：119</li>
-                    <li>日本旅遊服務中心 (JNTO)：050-3816-2787 (全年無休，24h)</li>
-                </ul>
-            </section>
-
-        </main>
-    </div>
-
-    <footer>
-        <p>© 2026 tokyo trip | meowmeow jp </p>
-    </footer>
-
-    <script>
-        // 1. 側邊欄切換功能 (Sidebar Toggle)
-        function toggleSidebar() {
-            const nav = document.getElementById('sidebar-nav');
-            nav.classList.toggle('active'); 
-        }
-
-        // 點擊連結後自動關閉側邊欄 (增進手機體驗)
-        document.querySelectorAll('#sidebar-nav a').forEach(item => {
-            item.addEventListener('click', () => {
-                const nav = document.getElementById('sidebar-nav');
-                if (window.innerWidth <= 992 && nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                }
-            });
-        });
+/* ------------------------------------------------------------------ */
+/* 核心佈局：側邊欄容器 (電腦版佈局) */
+/* ------------------------------------------------------------------ */
+.main-layout-wrapper {
+    display: flex; 
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 20px; 
+}
 
 
-        // 2. Accordion 摺疊功能 (通用於所有 .accordion-item)
-        const allAccordionItems = document.querySelectorAll('.accordion-item');
-        
-        allAccordionItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                // 檢查點擊的目標是否為 header 按鈕
-                if (e.target.closest('.accordion-header')) {
-                    const header = e.target.closest('.accordion-header');
-                    const currentItem = header.closest('.accordion-item');
-                    const content = currentItem.querySelector('.accordion-content');
-                    
-                    const isActive = currentItem.classList.contains('active');
+/* ------------------------------------------------------------------ */
+/* 導覽列樣式 - 側邊欄 (Sidebar) */
+/* ------------------------------------------------------------------ */
+nav {
+    background-color: transparent; 
+    padding: 0;
+    text-align: left;
+    position: sticky; 
+    top: 20px; 
+    z-index: 900; 
+    width: 240px; 
+    flex-shrink: 0;
+    margin-right: 40px;
+}
 
-                    // 檢查是否是行程表容器，若是，則關閉同組其他項目
-                    const isItinerary = currentItem.closest('#accordion-container-itinerary');
+nav a {
+    color: var(--text-dark);
+    background-color: var(--card-background); 
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 8px 0; 
+    border-radius: 8px; 
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    display: block; 
+    border: 1px solid var(--border-light);
+}
 
-                    // 關閉同組所有項目
-                    if (isItinerary) {
-                        isItinerary.querySelectorAll('.accordion-item').forEach(otherItem => {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
-                            otherItem.querySelector('.accordion-header span').textContent = "點擊展開";
-                        });
-                    } else {
-                         // 對於單獨的 accordion (如地鐵圖)，只關閉自己
-                         if (isActive) {
-                             currentItem.classList.remove('active');
-                             content.style.maxHeight = null;
-                             currentItem.querySelector('.accordion-header span').textContent = "點擊展開";
-                             return; // 如果是關閉動作，則結束
-                         }
-                    }
+nav a:hover {
+    background-color: var(--primary-color); 
+    color: white;
+    border-color: var(--primary-color);
+}
 
-                    // 啟用/展開當前項目
-                    if (!isActive) {
-                        currentItem.classList.add('active');
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        currentItem.querySelector('.accordion-header span').textContent = "點擊收起";
-                    }
-                }
-            });
-        });
-        
-        // 初始化：行程表第一個項目展開
-        const itineraryContainer = document.getElementById('accordion-container-itinerary');
-        if (itineraryContainer) {
-            const firstItem = itineraryContainer.querySelector('.accordion-item');
-            if (firstItem) {
-                const firstContent = firstItem.querySelector('.accordion-content');
-                firstItem.classList.add('active');
-                firstContent.style.maxHeight = firstContent.scrollHeight + "px";
-                firstItem.querySelector('.accordion-header span').textContent = "點擊收起";
-            }
-        }
-    </script>
-</body>
-</html>
+/* 主要內容區塊 */
+main {
+    padding: 0; 
+    max-width: 1000px;
+    flex-grow: 1; 
+}
+
+.section-container {
+    background-color: var(--card-background);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+}
+
+.section-container h2 {
+    color: var(--primary-color); 
+    border-bottom: 2px solid var(--border-light); 
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Accordion (摺疊菜單) 樣式 - 行程表 */
+/* ------------------------------------------------------------------ */
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: #f7f7f7;
+    border: none;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.accordion-header span {
+    font-size: 0.8em;
+    color: var(--primary-color);
+    margin-left: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    white-space: nowrap; 
+}
+
+.accordion-item.active .accordion-header {
+    background-color: var(--primary-color); 
+    color: white;
+}
+.accordion-item.active .accordion-header h3 {
+    color: white;
+}
+.accordion-item.active .accordion-header span {
+    content: "點擊收起"; 
+    color: white;
+    opacity: 1;
+}
+
+/* 內容區塊 */
+.accordion-content {
+    padding: 0 20px;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out; 
+    background-color: var(--card-background);
+    border-top: 1px solid #eee;
+}
+
+.accordion-content p {
+    margin: 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+}
+
+.accordion-content p:last-child {
+    border-bottom: none;
+    padding-bottom: 15px; 
+}
+
+/* 亮點日強調 */
+.accordion-item.highlight-day {
+    border-color: var(--accent-color);
+}
+.accordion-item.highlight-day .accordion-header:hover {
+    background-color: #ffe0b2;
+}
+.accordion-item.highlight-day.active .accordion-header {
+     background-color: var(--accent-color); 
+}
+
+/* ------------------------------------------------------------------ */
+/* 其他區塊樣式 (保持一致性) */
+/* ------------------------------------------------------------------ */
+
+.day-card.highlight { /* 舊的 highlight 樣式，用於非行程表區塊 */
+    border-left-color: var(--accent-color); 
+    background-color: #fff8e1; 
+}
+
+.day-card .note {
+    font-style: italic;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* 按鈕樣式 (使用強調色) */
+.button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #c0392b;
+}
+
+/* 航班區塊樣式 (用於實用資訊區) */
+.flight-detail-box {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-light); 
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9; 
+}
+
+/* 分帳區塊雙按鈕佈局 */
+.split-link-box {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.split-link-box h3 {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+.split-button {
+    flex: 1 1 45%; 
+    min-width: 200px; 
+    text-align: center;
+    padding: 12px 10px;
+    margin: 0; 
+    margin-top: 10px; 
+}
+
+
+/* 頁尾樣式 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color); 
+    color: #ffffff;
+    font-size: 0.9em;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* RWD - 手機版適應與側邊欄切換 */
+/* ------------------------------------------------------------------ */
+@media (max-width: 992px) { 
+    /* 核心佈局：取消 Flexbox */
+    .main-layout-wrapper {
+        flex-direction: column; 
+        padding: 0;
+    }
+    
+    /* 顯示漢堡圖標 */
+    .menu-icon {
+        display: flex; 
+        z-index: 1001; 
+    }
+
+    /* 隱藏/顯示側邊欄 */
+    nav {
+        position: fixed; 
+        top: 0;
+        left: -280px; 
+        width: 250px; 
+        height: 100%;
+        background-color: var(--primary-color); 
+        padding: 60px 15px 20px;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        margin: 0;
+        display: block; 
+    }
+
+    /* JavaScript 會添加這個類來顯示側邊欄 */
+    nav.active {
+        left: 0;
+    }
+
+    nav a {
+        background-color: rgba(255, 255, 255, 0.1); 
+        color: #ffffff;
+        margin: 10px 0;
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    nav a:hover {
+        background-color: var(--accent-color);
+        color: #ffffff;
+    }
+
+    main {
+        padding: 20px; 
+        width: 100%;
+    }
+    .flight-detail-box {
+        flex-direction: column;
+    }
+
+    /* 手機上分帳按鈕完全堆疊 */
+    .split-link-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .split-button {
+        flex: 1 1 100%; 
+        min-width: unset;
+        margin-top: 0;
+    }
+}
