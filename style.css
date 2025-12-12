@@ -2,13 +2,13 @@
 /* 湖水藍主題、側邊欄菜單與可愛字體 (最終版 CSS) */
 /* ------------------------------------------------------------------ */
 
-/* 引入可愛中文字體 (例如：懷源體 / HuaiyuanTC) */
+/* 引入可愛中文字體 (Huaiyuan) 和可愛英文 (Gaegu) 字體 */
 @import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Gaegu:wght@400;700&display=swap');
 
 /* 定義湖水藍主題色變數 */
 :root {
     --primary-color: #008080; /* 主湖水藍 */
-    --accent-color: #84C1FF; /* 番茄紅/暖色強調 */
+    --accent-color: #84C1FF; /* 次強調色/亮點色 */
     --background-light: #f5f5f5; /* 淺米灰色背景 (非純白) */
     --card-background: #D2E9FF; /* 卡片內容仍用白色以保持閱讀性 */
     --text-dark: #2c3e50; /* 深藍灰文字 */
@@ -17,6 +17,7 @@
 
 /* 基本設定與字體 */
 body {
+    /* 這裡維持 Huaiyuan Sans TC 作為主要字體，確保中文內容的手繪風格 */
     font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
     line-height: 1.7; 
     margin: 0;
@@ -37,9 +38,14 @@ header {
 }
 
 header h1 {
+    /* *** 修正點：明確指定 h1 使用 Gaegu 英文手繪字體 *** */
+    font-family: 'Gaegu', cursive, sans-serif; 
+    
     margin: 0 0 5px 0;
     font-size: 2.5em;
     color: var(--primary-color); 
+    /* Gaegu 在 font-weight: 400 時效果最好，但維持 700 讓它粗一點 */
+    font-weight: 700; 
 }
 
 /* ------------------------------------------------------------------ */
@@ -93,8 +99,8 @@ nav {
 }
 
 nav a {
-    color: var(--text-dark);
-    background-color: var(--card-background); 
+    color: var(--text-dark); /* 深色文字 */
+    background-color: var(--card-background); /* 白色按鈕背景 */
     text-decoration: none;
     padding: 12px 20px;
     margin: 8px 0; 
@@ -107,7 +113,7 @@ nav a {
 
 nav a:hover {
     background-color: var(--primary-color); 
-    color: white;
+    color: white; /* Hover 時變白色 */
     border-color: var(--primary-color);
 }
 
@@ -119,7 +125,7 @@ main {
 }
 
 .section-container {
-    background-color: var(--card-background);
+    background-color: var(--card-background); 
     padding: 25px;
     margin-bottom: 30px;
     border-radius: 12px;
@@ -145,7 +151,7 @@ main {
 
 .accordion-header {
     width: 100%;
-    background-color: #f7f7f7;
+    background-color: #f7f7f7; /* 淺灰色背景 */
     border: none;
     padding: 15px 20px;
     text-align: left;
@@ -170,22 +176,20 @@ main {
     font-size: 0.8em;
     color: var(--primary-color);
     margin-left: 10px;
-    opacity: 0.7;
+    opacity: 0.9;
     transition: opacity 0.3s;
     white-space: nowrap; 
 }
 
 .accordion-item.active .accordion-header {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color); /* 展開時使用湖水藍 */
     color: white;
 }
 .accordion-item.active .accordion-header h3 {
     color: white;
 }
 .accordion-item.active .accordion-header span {
-    content: "點擊收起"; 
     color: white;
-    opacity: 1;
 }
 
 /* 內容區塊 */
@@ -195,13 +199,14 @@ main {
     overflow: hidden;
     transition: max-height 0.3s ease-in-out; 
     background-color: var(--card-background);
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-light);
 }
 
 .accordion-content p {
     margin: 10px 0;
     padding-bottom: 5px;
     border-bottom: 1px dashed #eee;
+    color: var(--text-dark);
 }
 
 .accordion-content p:last-child {
@@ -218,6 +223,7 @@ main {
 }
 .accordion-item.highlight-day.active .accordion-header {
      background-color: var(--accent-color); 
+     color: white;
 }
 
 /* ------------------------------------------------------------------ */
@@ -237,7 +243,6 @@ main {
 
 /* 按鈕樣式 (使用強調色) */
 .button {
-    display: inline-block;
     background-color: var(--accent-color);
     color: white;
     padding: 10px 20px;
@@ -247,12 +252,11 @@ main {
     transition: background-color 0.3s;
     font-weight: bold;
 }
-
 .button:hover {
     background-color: #c0392b;
 }
 
-/* 航班區塊樣式 (用於實用資訊區) */
+/* 航班/預報區塊 (淺色版本) */
 .flight-detail-box {
     display: flex;
     justify-content: space-around;
@@ -297,8 +301,7 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: var(--primary-color); 
-    color: #ffffff;
-    font-size: 0.9em;
+    color: white;
 }
 
 
@@ -325,7 +328,7 @@ footer {
         left: -280px; 
         width: 250px; 
         height: 100%;
-        background-color: var(--primary-color); 
+        background-color: var(--card-background); /* 側邊欄背景為白色 */
         padding: 60px 15px 20px;
         box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
         transition: left 0.3s ease-in-out;
@@ -334,20 +337,18 @@ footer {
         display: block; 
     }
 
-    /* JavaScript 會添加這個類來顯示側邊欄 */
     nav.active {
         left: 0;
     }
 
     nav a {
-        background-color: rgba(255, 255, 255, 0.1); 
-        color: #ffffff;
-        margin: 10px 0;
-        border-color: rgba(255, 255, 255, 0.3);
+        background-color: #f0f0f0; /* 淺色按鈕 */
+        color: var(--text-dark);
+        border-color: var(--border-light);
     }
     nav a:hover {
-        background-color: var(--accent-color);
-        color: #ffffff;
+        background-color: var(--primary-color);
+        color: white;
     }
 
     main {
