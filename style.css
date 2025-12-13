@@ -1,47 +1,50 @@
 /* ------------------------------------------------------------------ */
-/* 復古配色主題 (Retro Color Theme) - 最終版 CSS */
+/* 復古紅/黃/米白主題 (Retro Red/Yellow Theme) - 最終版 CSS */
 /* ------------------------------------------------------------------ */
 
-/* 引入可愛中文字體 (Huaiyuan) 和可愛英文 (Gaegu) 字體 */
-@import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Gaegu:wght@400;700&display=swap');
+/* 引入中文手繪字體 (Huaiyuan) 和復古草寫英文 (Yellowtail) 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Yellowtail&display=swap');
 
-/* 定義復古主題色變數 */
+/* 定義復古主題色變數 (使用您提供的配色) */
 :root {
-    --primary-color: #AF1E17;   /* 主強調色：復古紅 (Retro Red) */
-    --accent-color: #99AE61;    /* 次要色：芥末綠 (Mustard Green) */
-    --background-dark: #3A4C54; /* 頁面背景：深灰藍 (Dark Slate) */
-    --card-background: #CFB899; /* 卡片/區塊背景：卡其米色 (Khaki Beige) */
-    --text-dark: #37474f;       /* 深藍灰文字 (保持良好的可讀性) */
-    --border-light: #5f747f;    /* 深色邊框/分隔線 */
+    --primary-color: #A6171C;   /* 主強調色：RUBY (復古紅) */
+    --accent-color: #F1C045;    /* 次要色：SUNNY (亮黃) */
+    --background-dark: #37474f; /* 頁面背景：深灰 (保持底色深一點，讓區塊更突出) */
+    --card-background: #D6D0C5; /* 卡片/區塊背景：NATURAL (米白) */
+    --text-dark: #37474f;       /* 深藍灰文字 (確保可讀性) */
+    --border-light: #A6171C;    /* 復古紅邊框/分隔線 */
 }
 
 /* 基本設定與字體 */
 body {
+    /* 這裡維持 Huaiyuan Sans TC 作為主要字體，確保中文內容的手繪風格 */
     font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
     line-height: 1.7; 
     margin: 0;
     padding: 0;
-    background-color: var(--background-dark); /* 深灰藍背景 */
+    background-color: var(--background-dark); /* 深灰背景 */
     color: var(--text-dark); 
 }
 
 /* 標頭樣式 */
 header {
-    background-color: var(--card-background); /* 卡其米色背景 */
+    background-color: var(--card-background); /* 米白背景 */
     color: var(--text-dark);
     padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     border-bottom: 3px solid var(--primary-color); /* 復古紅底線 */
     position: relative; 
 }
 
 header h1 {
-    font-family: 'Gaegu', cursive, sans-serif; 
+    /* *** 修正點：使用 Yellowtail 復古草寫字體 *** */
+    font-family: 'Yellowtail', cursive; 
+    
     margin: 0 0 5px 0;
-    font-size: 2.5em;
+    font-size: 3em; /* 增大標題字體 */
     color: var(--primary-color); /* 復古紅標題 */
-    font-weight: 700; 
+    font-weight: 400; /* 草寫體通常不需要太粗 */
 }
 
 /* ------------------------------------------------------------------ */
@@ -69,7 +72,7 @@ header h1 {
 }
 
 /* ------------------------------------------------------------------ */
-/* 核心佈局與主要內容區塊 */
+/* 核心佈局：側邊欄容器 (電腦版佈局) */
 /* ------------------------------------------------------------------ */
 .main-layout-wrapper {
     display: flex; 
@@ -78,26 +81,6 @@ header h1 {
     padding: 20px; 
 }
 
-main {
-    padding: 0; 
-    max-width: 1000px;
-    flex-grow: 1; 
-}
-
-.section-container {
-    background-color: var(--card-background); /* 卡其米色區塊背景 */
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 增加陰影對比 */
-}
-
-.section-container h2 {
-    color: var(--primary-color); /* 復古紅標題 */
-    border-bottom: 2px solid var(--border-light); 
-    padding-bottom: 10px;
-    margin-top: 0;
-}
 
 /* ------------------------------------------------------------------ */
 /* 導覽列樣式 - 側邊欄 (Sidebar) */
@@ -115,8 +98,8 @@ nav {
 }
 
 nav a {
-    color: var(--text-dark); 
-    background-color: var(--card-background); /* 卡其米色按鈕背景 */
+    color: var(--text-dark); /* 深色文字 */
+    background-color: var(--card-background); /* 米白按鈕背景 */
     text-decoration: none;
     padding: 12px 20px;
     margin: 8px 0; 
@@ -133,6 +116,28 @@ nav a:hover {
     border-color: var(--primary-color);
 }
 
+/* 主要內容區塊 */
+main {
+    padding: 0; 
+    max-width: 1000px;
+    flex-grow: 1; 
+}
+
+.section-container {
+    background-color: var(--card-background); /* 米白區塊背景 */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.section-container h2 {
+    color: var(--primary-color); /* 復古紅標題 */
+    border-bottom: 2px solid var(--border-light); 
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
 /* ------------------------------------------------------------------ */
 /* Accordion (摺疊菜單) 樣式 - 行程表 */
 /* ------------------------------------------------------------------ */
@@ -145,7 +150,7 @@ nav a:hover {
 
 .accordion-header {
     width: 100%;
-    background-color: #e0d0b0; /* 略深的米色背景 */
+    background-color: #e0d0c0; /* 略深的米色背景 */
     border: none;
     padding: 15px 20px;
     text-align: left;
@@ -210,13 +215,13 @@ nav a:hover {
 
 /* 亮點日強調 */
 .accordion-item.highlight-day {
-    border-color: var(--accent-color); /* 芥末綠邊框 */
+    border-color: var(--accent-color); /* 亮黃邊框 */
 }
 .accordion-item.highlight-day .accordion-header:hover {
-    background-color: #c8d3b3; /* 略淺的芥末綠 Hover */
+    background-color: #ffde82; /* 略淺的亮黃 Hover */
 }
 .accordion-item.highlight-day.active .accordion-header {
-     background-color: var(--accent-color); /* 芥末綠展開 */
+     background-color: var(--accent-color); /* 亮黃展開 */
      color: var(--text-dark);
 }
 .accordion-item.highlight-day.active .accordion-header h3 {
@@ -225,7 +230,6 @@ nav a:hover {
 .accordion-item.highlight-day.active .accordion-header span {
      color: var(--primary-color);
 }
-
 
 /* ------------------------------------------------------------------ */
 /* 匯率換算器樣式 (獨立 Section) */
@@ -241,7 +245,7 @@ nav a:hover {
 }
 
 .currency-converter-box h3 {
-    color: var(--accent-color); /* 芥末綠標題 */
+    color: var(--accent-color); /* 亮黃標題 */
     margin-top: 0;
     margin-bottom: 5px;
 }
@@ -258,7 +262,6 @@ nav a:hover {
 }
 
 .converter-inputs input {
-    /* *** 加大輸入框樣式 *** */
     padding: 15px; 
     font-size: 1.3em; 
     
@@ -266,7 +269,7 @@ nav a:hover {
     border-radius: 8px; 
     width: 40%;
     text-align: center;
-    font-family: 'Gaegu', cursive, sans-serif; 
+    font-family: 'Huaiyuan Sans TC', sans-serif; /* 確保輸入框數字可讀，使用基礎字體 */
     color: var(--text-dark);
 }
 
@@ -281,7 +284,7 @@ nav a:hover {
 /* ------------------------------------------------------------------ */
 
 .day-card.highlight { 
-    border-left-color: var(--primary-color); /* 復古紅強調 */
+    border-left-color: var(--primary-color); 
     background-color: var(--card-background); 
 }
 
@@ -303,7 +306,7 @@ nav a:hover {
     font-weight: bold;
 }
 .button:hover {
-    background-color: var(--accent-color); /* Hover 變芥末綠 */
+    background-color: var(--accent-color); /* Hover 變亮黃 */
     color: var(--text-dark);
 }
 
@@ -316,7 +319,7 @@ nav a:hover {
     border: 1px solid var(--border-light); 
     border-radius: 8px;
     margin-bottom: 15px;
-    background-color: #e0d0b0; /* 略深的米色背景 */
+    background-color: #e0d0c0; /* 略深的米色背景 */
 }
 
 /* 分帳區塊雙按鈕佈局 */
@@ -329,7 +332,7 @@ nav a:hover {
     padding: 15px;
     border: 1px solid var(--border-light);
     border-radius: 8px;
-    background-color: #e0d0b0; /* 略深的米色背景 */
+    background-color: #e0d0c0; /* 略深的米色背景 */
 }
 .split-link-box h3 {
     width: 100%;
@@ -351,8 +354,8 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--background-dark); /* 深灰藍頁尾 */
-    color: var(--card-background); /* 卡其米色文字 */
+    background-color: var(--background-dark); /* 深灰頁尾 */
+    color: var(--card-background); /* 米白文字 */
     font-size: 0.9em;
 }
 
@@ -380,7 +383,7 @@ footer {
         left: -280px; 
         width: 250px; 
         height: 100%;
-        background-color: var(--card-background); /* 卡其米色側邊欄背景 */
+        background-color: var(--card-background); 
         padding: 60px 15px 20px;
         box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
         transition: left 0.3s ease-in-out;
@@ -394,7 +397,7 @@ footer {
     }
 
     nav a {
-        background-color: #e0d0b0; /* 略深的米色按鈕 */
+        background-color: #e0d0c0; /* 略深的米色按鈕 */
         color: var(--text-dark);
         border-color: var(--border-light);
     }
