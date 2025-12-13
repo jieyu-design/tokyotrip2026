@@ -11,10 +11,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon"> 
 </head>
 
-
-
-
-
 <body>
 
     <header>
@@ -31,7 +27,7 @@
     <div class="main-layout-wrapper">
         
         <nav id="sidebar-nav">
-            <a href="#flights">✈️ 航班時段</a>
+            <a href="#checklist">📋 待辦清單</a> <a href="#flights">✈️ 航班時段</a>
             <a href="#itinerary">🗓️ 行程總覽</a>
             <a href="#food">🍣 美食分類</a>
             <a href="#currency">💴 匯率換算</a> 
@@ -40,6 +36,22 @@
         </nav>
         
         <main>
+            
+            <section id="checklist" class="section-container">
+                <h2>📋 行前待辦清單 (Checklist)</h2>
+                <div class="checklist-box">
+                    
+                    <div class="task-input-container">
+                        <input type="text" id="newTaskInput" placeholder="新增待辦或打包物品">
+                        <button onclick="addTask()">新增</button>
+                    </div>
+
+                    <ul id="taskList">
+                        </ul>
+                    
+                    <button id="clearCompletedBtn" onclick="clearCompletedTasks()">清除已完成</button>
+                </div>
+            </section>
             
             <section id="flights" class="section-container">
                 <h2>✈️ 來回航班資訊 (01/08 - 01/16)</h2>
@@ -371,6 +383,94 @@
     </footer>
 
     <script>
+        
+        // 4. 待辦事項清單 (To-Do List) 邏輯 - 使用 Local Storage 持久化
+        
+        // 確保 DOM 載入後執行 loadTasks
+        document.addEventListener('DOMContentLoaded', loadTasks);
+
+        function getTasks() {
+            // 從 LocalStorage 載入任務，如果沒有則回傳空陣列
+            const tasks = localStorage.getItem('tripTasks');
+            return tasks ? JSON.parse(tasks) : [];
+        }
+
+        function saveTasks(tasks) {
+            // 將任務陣列儲存到 LocalStorage
+            localStorage.setItem('tripTasks', JSON.stringify(tasks));
+        }
+
+        function renderTasks() {
+            const taskList = document.getElementById('taskList');
+            const tasks = getTasks();
+            taskList.innerHTML = ''; // 清空現有清單
+
+            tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+                li.className = task.completed ? 'completed' : '';
+                
+                // 複選框
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = task.completed;
+                checkbox.onchange = () => toggleTaskCompleted(index);
+                
+                // 任務文本
+                const textSpan = document.createElement('span');
+                textSpan.textContent = task.text;
+                
+                // 刪除按鈕
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = '❌';
+                deleteBtn.onclick = () => deleteTask(index);
+
+                li.appendChild(checkbox);
+                li.appendChild(textSpan);
+                li.appendChild(deleteBtn);
+                taskList.appendChild(li);
+            });
+        }
+        
+        function addTask() {
+            const input = document.getElementById('newTaskInput');
+            const text = input.value.trim();
+
+            if (text === "") return;
+
+            const tasks = getTasks();
+            tasks.push({ text: text, completed: false });
+            saveTasks(tasks);
+            input.value = ''; // 清空輸入框
+            renderTasks();
+        }
+
+        function toggleTaskCompleted(index) {
+            const tasks = getTasks();
+            tasks[index].completed = !tasks[index].completed;
+            saveTasks(tasks);
+            renderTasks();
+        }
+        
+        function deleteTask(index) {
+            const tasks = getTasks();
+            tasks.splice(index, 1); // 移除陣列中的該項任務
+            saveTasks(tasks);
+            renderTasks();
+        }
+
+        function clearCompletedTasks() {
+            let tasks = getTasks();
+            // 只保留未完成的任務
+            tasks = tasks.filter(task => !task.completed);
+            saveTasks(tasks);
+            renderTasks();
+        }
+
+        function loadTasks() {
+            // 頁面載入完成後，執行一次渲染
+            renderTasks();
+        }
+        
         // 1. 側邊欄切換功能 (Sidebar Toggle)
         function toggleSidebar() {
             const nav = document.getElementById('sidebar-nav');
@@ -476,3 +576,4 @@
     </script>
 </body>
 </html>
+
