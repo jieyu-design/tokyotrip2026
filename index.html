@@ -29,6 +29,7 @@
             <a href="#flights">✈️ 航班時段</a>
             <a href="#itinerary">🗓️ 行程總覽</a>
             <a href="#food">🍣 美食分類</a>
+            <a href="#currency">💴 匯率換算</a> 
             <a href="#split-bill">💰 分帳記錄</a>
             <a href="#info">💡 實用資訊</a>
         </nav>
@@ -247,6 +248,20 @@
                 </div>
             </section>
 
+            <section id="currency" class="section-container">
+                <h2>💴 匯率換算 (JPY to TWD)</h2>
+                <div class="currency-converter-box">
+                    <h3>即時匯率換算器</h3>
+                    <p>當前參考匯率：1 JPY ≈ 0.20 TWD</p>
+                    
+                    <div class="converter-inputs">
+                        <input type="number" id="jpyInput" oninput="convertCurrency()" placeholder="輸入日幣金額 (JPY)">
+                        <span>=</span>
+                        <input type="text" id="twdOutput" placeholder="台幣金額 (TWD)" readonly>
+                    </div>
+                </div>
+            </section>
+            
             <section id="split-bill" class="section-container">
                 <h2>💰 分帳記錄 (Split the Bill)</h2>
                 
@@ -265,19 +280,6 @@
             
             <section id="info" class="section-container">
                 <h2>💡 實用資訊</h2>
-                
-                <div class="currency-converter">
-                    <h3>匯率換算</h3>
-                    <p>當前參考匯率：1 JPY ≈ 0.20 TWD</p>
-                    
-                    <div class="converter-inputs">
-                        <input type="number" id="jpyInput" oninput="convertCurrency()" placeholder="輸入日幣金額 (JPY)">
-                        <span>=</span>
-                        <input type="text" id="twdOutput" placeholder="台幣金額 (TWD)" readonly>
-                    </div>
-                </div>
-
-
                 
                 <div class="accordion-item" id="accordion-subway">
                     <button class="accordion-header">
@@ -444,7 +446,6 @@
             twdOutput.value = twdAmount.toLocaleString();
         }
         
-        // 初始化：Day 1 預設為收合，所以不再需要強制展開的初始化腳本
     </script>
 </body>
 </html>
