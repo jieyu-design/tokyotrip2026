@@ -2,8 +2,10 @@
 /* 復古紅/黃/米白主題 (Retro Red/Yellow Theme) - 最終版 CSS */
 /* ------------------------------------------------------------------ */
 
-/* 引入中文手繪字體 (Huaiyuan) 和 Henny Penny 字體 */
+/* ✅ 正確的字體引入：Huaiyuan + Henny Penny */
 @import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Henny+Penny&display=swap');
+
+/* ... 之後的 :root, body, header h1 等樣式保持不變 ... */
 
 /* 定義復古主題色變數 (使用您提供的配色) */
 :root {
