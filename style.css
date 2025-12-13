@@ -1,18 +1,18 @@
 /* ------------------------------------------------------------------ */
-/* 復古深色主題 (Deep Retro Theme: Red, Green, Blue, Yellow) - 最終版 CSS */
+/* 復古深色主題 (強調紅色) - 最終版 CSS */
 /* ------------------------------------------------------------------ */
 
 /* 引入中文手繪字體 (Huaiyuan) 和 Henny Penny 字體 */
 @import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Henny+Penny&display=swap');
 
-/* 定義復古主題色變數 (使用您提供的新配色) */
+/* 定義復古主題色變數 */
 :root {
-    --primary-color: #591F1E;   /* 主強調色：深紅/咖啡色 */
+    --primary-color: #591F1E;   /* 主強調色：深紅/咖啡色 (您的紅色主色) */
     --accent-color: #F4C12A;    /* 次要色：亮黃 */
     --background-dark: #062C53; /* 頁面背景：深藍 */
     --card-background: #074F2A; /* 卡片/區塊背景：深綠 */
-    --text-light: #f5f5f5;      /* 淺色文字 (用於深色背景) */
-    --text-dark: #37474f;       /* 深藍灰文字 (主要用於亮黃背景/可讀性要求高的地方) */
+    --text-light: #f5f5f5;      /* 淺色文字 */
+    --text-dark: #37474f;       /* 深藍灰文字 (用於亮黃背景) */
     --border-light: #591F1E;    /* 邊框使用深紅 */
 }
 
@@ -23,13 +23,12 @@ body {
     margin: 0;
     padding: 0;
     
-    /* 紋路背景設定 (使用深藍背景色，若有圖片請自行解除註釋) */
-    background-color: var(--background-dark);
-/* background-image: url('paper_texture.png'); 
-   background-repeat: repeat; 
-   background-attachment: fixed; */
+    background-color: var(--background-dark); /* 深藍背景 */
+    /* background-image: url('paper_texture.png'); 
+    background-repeat: repeat; 
+    background-attachment: fixed; */
     
-    color: var(--text-light); /* 預設文字改為淺色 */
+    color: var(--text-light); 
 }
 
 /* 標頭樣式 */
@@ -49,7 +48,7 @@ header h1 {
     
     margin: 0 0 5px 0;
     font-size: 3.5em; 
-    color: var(--accent-color); /* 亮黃標題 */
+    color: var(--primary-color); /* 標題使用主色：深紅 */
     font-weight: 400; 
     letter-spacing: 3px; 
     text-transform: uppercase; 
@@ -76,7 +75,7 @@ header p {
 }
 
 .menu-icon div {
-    background-color: var(--accent-color); /* 亮黃線條 */
+    background-color: var(--primary-color); /* 漢堡圖標使用主色：深紅 */
     width: 100%;
     height: 3px;
     border-radius: 5px;
@@ -110,7 +109,7 @@ nav {
 }
 
 nav a {
-    color: var(--text-light); /* 淺色文字 */
+    color: var(--text-light); 
     background-color: var(--card-background); /* 深綠按鈕背景 */
     text-decoration: none;
     padding: 12px 20px;
@@ -123,7 +122,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--primary-color); /* Hover 變深紅 */
+    background-color: var(--primary-color); /* Hover 變主色：深紅 */
     color: var(--text-light); 
     border-color: var(--accent-color); /* 邊框變亮黃 */
 }
@@ -141,11 +140,11 @@ main {
     margin-bottom: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
-    color: var(--text-light); /* 區塊內文字預設為淺色 */
+    color: var(--text-light); 
 }
 
 .section-container h2 {
-    color: var(--accent-color); /* 亮黃標題 */
+    color: var(--primary-color); /* 標題使用主色：深紅 */
     border-bottom: 2px solid var(--border-light); 
     padding-bottom: 10px;
     margin-top: 0;
@@ -187,7 +186,7 @@ main {
 
 .accordion-header span {
     font-size: 0.8em;
-    color: var(--accent-color);
+    color: var(--primary-color); /* 展開箭頭使用主色：深紅 */
     margin-left: 10px;
     opacity: 0.9;
     transition: opacity 0.3s;
@@ -195,7 +194,7 @@ main {
 }
 
 .accordion-item.active .accordion-header {
-    background-color: var(--primary-color); /* 展開時使用深紅 */
+    background-color: var(--primary-color); /* 展開時使用主色：深紅 */
     color: var(--text-light);
 }
 .accordion-item.active .accordion-header h3 {
@@ -263,7 +262,7 @@ main {
 }
 
 .currency-converter-box h3 {
-    color: var(--accent-color); 
+    color: var(--primary-color); /* 匯率標題使用主色：深紅 */
     margin-top: 0;
     margin-bottom: 5px;
 }
@@ -287,15 +286,14 @@ main {
     border-radius: 8px; 
     width: 40%;
     text-align: center;
-    /* 輸入框數字字體使用 Special Elite 讓數字也有打字機風格 */
     font-family: 'Special Elite', monospace; 
-    background-color: var(--text-light); /* 輸入框內使用淺色背景 */
+    background-color: var(--text-light); 
     color: var(--text-dark);
 }
 
 .converter-inputs span {
     font-size: 1.8em; 
-    color: var(--primary-color); 
+    color: var(--primary-color); /* 箭頭使用主色：深紅 */
     font-weight: bold; 
 }
 
@@ -310,7 +308,7 @@ main {
 
 .day-card .note {
     font-style: italic;
-    color: var(--accent-color); /* 亮黃備註 */
+    color: var(--primary-color); /* 備註使用主色：深紅 */
     font-weight: bold;
 }
 
@@ -341,7 +339,6 @@ main {
     background-color: #176535; /* 略淺的綠色背景 */
 }
 .flight-detail-box h3 {
-    /* 讓航班標題也使用 Special Elite 字體 */
     font-family: 'Special Elite', monospace; 
     letter-spacing: 1px;
     color: var(--text-light);
