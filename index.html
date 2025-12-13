@@ -215,7 +215,7 @@
             </section>
             
             <section id="food" class="section-container">
-                <h2>🍣 美食分類 (餐廳與甜點清單)</h2>
+                <h2>🍣 美食分類清單</h2>
                 
                 <div class="food-list">
                     
@@ -249,21 +249,21 @@
             </section>
 
             <section id="currency" class="section-container">
-                <h2>💴 匯率換算 (JPY to TWD)</h2>
+                <h2>💴 匯率換算 (JPY ⇆ TWD)</h2>
                 <div class="currency-converter-box">
-                    <h3>即時匯率換算器</h3>
+                    <h3>雙向即時匯率換算器</h3>
                     <p>當前參考匯率：1 JPY ≈ 0.20 TWD</p>
                     
                     <div class="converter-inputs">
-                        <input type="number" id="jpyInput" oninput="convertCurrency()" placeholder="輸入日幣金額 (JPY)">
-                        <span>=</span>
-                        <input type="text" id="twdOutput" placeholder="台幣金額 (TWD)" readonly>
+                        <input type="number" id="twdInput" oninput="convertCurrencyTWD()" placeholder="輸入台幣金額 (TWD)">
+                        <span>⇆</span>
+                        <input type="number" id="jpyInput" oninput="convertCurrencyJPY()" placeholder="輸入日幣金額 (JPY)">
                     </div>
                 </div>
             </section>
             
             <section id="split-bill" class="section-container">
-                <h2>💰 分帳記錄 (Split the Bill)</h2>
+                <h2>💰 分帳記錄 </h2>
                 
                 <div class="split-link-box">
                     <h3>點擊前往App分帳</h3>
@@ -427,23 +427,45 @@
         });
         
         // 3. 匯率換算器功能
-        function convertCurrency() {
-            // *** 【設定匯率：1 JPY = 0.20 TWD】 ***
-            const exchangeRate = 0.20; 
-            // **********************************************
+        // 匯率設定：1 JPY = 0.20 TWD
+        const exchangeRate = 0.20; 
+        
+        // 函數 A: 輸入日幣，換算台幣 (JPY -> TWD)
+        function convertCurrencyJPY() {
+            const jpyInput = document.getElementById('jpyInput');
+            const twdInput = document.getElementById('twdInput');
             
-            const jpyAmount = document.getElementById('jpyInput').value;
-            const twdOutput = document.getElementById('twdOutput');
+            const jpyAmount = jpyInput.value;
 
             if (jpyAmount === "" || isNaN(jpyAmount)) {
-                twdOutput.value = "";
+                twdInput.value = "";
                 return;
             }
 
-            const twdAmount = (parseFloat(jpyAmount) * exchangeRate).toFixed(0); // 取整數，方便參考
+            // JPY 換 TWD
+            const twdAmount = (parseFloat(jpyAmount) * exchangeRate).toFixed(0); 
 
-            // 確保輸出顯示千位數分隔符
-            twdOutput.value = twdAmount.toLocaleString();
+            // 輸出到台幣輸入框 (使用本地化格式)
+            twdInput.value = twdAmount.toLocaleString();
+        }
+
+        // 函數 B: 輸入台幣，換算日幣 (TWD -> JPY)
+        function convertCurrencyTWD() {
+            const twdInput = document.getElementById('twdInput');
+            const jpyInput = document.getElementById('jpyInput');
+            
+            const twdAmount = twdInput.value;
+            
+            if (twdAmount === "" || isNaN(twdAmount)) {
+                jpyInput.value = "";
+                return;
+            }
+
+            // TWD 換 JPY (除以匯率)
+            const jpyAmount = (parseFloat(twdAmount) / exchangeRate).toFixed(0); 
+            
+            // 輸出到日幣輸入框 (使用本地化格式)
+            jpyInput.value = jpyAmount.toLocaleString();
         }
         
     </script>
