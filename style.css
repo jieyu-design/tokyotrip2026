@@ -8,16 +8,15 @@
 /* 定義湖水藍主題色變數 */
 :root {
     --primary-color: #008080; /* 主湖水藍 */
-    --accent-color: #FF7043; /* 暖橘色強調 (為了與分帳按鈕的顏色一致，這裡改成暖橘色) */
+    --accent-color: #FF7043; /* 暖橘色強調 */
     --background-light: #f5f5f5; /* 淺米灰色背景 (非純白) */
-    --card-background: #ffffff; /* 卡片內容白色 (將 #D2E9FF 改回白色，以維持清爽度) */
+    --card-background: #ffffff; /* 卡片內容白色 */
     --text-dark: #2c3e50; /* 深藍灰文字 */
     --border-light: #b0c4de; /* 淺藍灰邊框 */
 }
 
 /* 基本設定與字體 */
 body {
-    /* 這裡維持 Huaiyuan Sans TC 作為主要字體，確保中文內容的手繪風格 */
     font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
     line-height: 1.7; 
     margin: 0;
@@ -38,7 +37,7 @@ header {
 }
 
 header h1 {
-    /* *** 修正點：明確指定 h1 使用 Gaegu 英文手繪字體 *** */
+    /* 修正點：明確指定 h1 使用 Gaegu 英文手繪字體 */
     font-family: 'Gaegu', cursive, sans-serif; 
     
     margin: 0 0 5px 0;
@@ -51,7 +50,7 @@ header h1 {
 /* 漢堡菜單圖標樣式 (只在手機上顯示) */
 /* ------------------------------------------------------------------ */
 .menu-icon {
-    display: none; /* 電腦版預設隱藏 */
+    display: none; 
     width: 30px;
     height: 25px;
     position: absolute;
@@ -98,8 +97,8 @@ nav {
 }
 
 nav a {
-    color: var(--text-dark); /* 深色文字 */
-    background-color: var(--card-background); /* 白色按鈕背景 */
+    color: var(--text-dark); 
+    background-color: var(--card-background); 
     text-decoration: none;
     padding: 12px 20px;
     margin: 8px 0; 
@@ -112,7 +111,7 @@ nav a {
 
 nav a:hover {
     background-color: var(--primary-color); 
-    color: white; /* Hover 時變白色 */
+    color: white; 
     border-color: var(--primary-color);
 }
 
@@ -150,7 +149,7 @@ main {
 
 .accordion-header {
     width: 100%;
-    background-color: #f7f7f7; /* 淺灰色背景 */
+    background-color: #f7f7f7; 
     border: none;
     padding: 15px 20px;
     text-align: left;
@@ -181,7 +180,7 @@ main {
 }
 
 .accordion-item.active .accordion-header {
-    background-color: var(--primary-color); /* 展開時使用湖水藍 */
+    background-color: var(--primary-color); 
     color: white;
 }
 .accordion-item.active .accordion-header h3 {
@@ -228,7 +227,7 @@ main {
 /* ------------------------------------------------------------------ */
 /* 匯率換算器樣式 (獨立 Section) */
 /* ------------------------------------------------------------------ */
-.currency-converter-box { /* 對應 index.html 中 section 內的新 div class */
+.currency-converter-box { 
     padding: 15px;
     border: 1px solid var(--border-light);
     border-radius: 8px;
@@ -266,18 +265,14 @@ main {
 .converter-inputs span {
     font-size: 1.8em; 
     color: var(--text-dark);
-}
-
-.converter-inputs input[readonly] {
-    background-color: #eee;
-    color: var(--text-dark);
+    font-weight: bold; /* 讓箭頭更明顯 */
 }
 
 /* ------------------------------------------------------------------ */
 /* 其他區塊樣式 (列表、按鈕、頁尾) */
 /* ------------------------------------------------------------------ */
 
-.day-card.highlight { /* 舊的 highlight 樣式，用於非行程表區塊 */
+.day-card.highlight { 
     border-left-color: var(--accent-color); 
     background-color: #fff8e1; 
 }
@@ -349,6 +344,7 @@ footer {
     padding: 20px;
     background-color: var(--primary-color); 
     color: white;
+    font-size: 0.9em;
 }
 
 
@@ -375,7 +371,7 @@ footer {
         left: -280px; 
         width: 250px; 
         height: 100%;
-        background-color: var(--card-background); /* 側邊欄背景為白色 */
+        background-color: var(--card-background); 
         padding: 60px 15px 20px;
         box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
         transition: left 0.3s ease-in-out;
@@ -389,7 +385,7 @@ footer {
     }
 
     nav a {
-        background-color: #f0f0f0; /* 淺色按鈕 */
+        background-color: #f0f0f0; 
         color: var(--text-dark);
         border-color: var(--border-light);
     }
@@ -417,10 +413,10 @@ footer {
         margin-top: 0;
     }
     
-    /* *** 手機上換算器輸入框佔滿寬度 (修正) *** */
+    /* *** 手機上換算器輸入框佈局 (修正) *** */
     .converter-inputs input {
         width: 45%; 
-        padding: 12px; /* 稍微縮小以適應手機佈局 */
+        padding: 12px; 
         font-size: 1.2em;
     }
     .converter-inputs span {
