@@ -2,49 +2,51 @@
 /* 復古紅/黃/米白主題 (Retro Red/Yellow Theme) - 最終版 CSS */
 /* ------------------------------------------------------------------ */
 
-/* 引入中文手繪字體 (Huaiyuan) 和復古草寫英文 (Yellowtail) 字體 */
-@import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Yellowtail&display=swap');
+/* 引入中文手繪字體 (Huaiyuan) 和 Special Elite 打字機風格字體 */
+@import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Special+Elite&display=swap');
 
 /* 定義復古主題色變數 (使用您提供的配色) */
 :root {
     --primary-color: #A6171C;   /* 主強調色：RUBY (復古紅) */
-    --accent-color: #99AE61;    /* 次要色：SUNNY (亮黃) */
-    --background-dark:#CFB899; /* 頁面背景：深灰 (保持底色深一點，讓區塊更突出) */
+    --accent-color: #F1C045;    /* 次要色：SUNNY (亮黃) */
+    --background-dark: #37474f; /* 頁面背景：深灰 */
     --card-background: #D6D0C5; /* 卡片/區塊背景：NATURAL (米白) */
-    --text-dark: #37474f;       /* 深藍灰文字 (確保可讀性) */
+    --text-dark: #37474f;       /* 深藍灰文字 */
     --border-light: #A6171C;    /* 復古紅邊框/分隔線 */
 }
 
 /* 基本設定與字體 */
 body {
-    /* 這裡維持 Huaiyuan Sans TC 作為主要字體，確保中文內容的手繪風格 */
+    /* 中文內容維持 Huaiyuan Sans TC */
     font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
     line-height: 1.7; 
     margin: 0;
     padding: 0;
-    background-color: var(--background-dark); /* 深灰背景 */
+    background-color: var(--background-dark); 
     color: var(--text-dark); 
 }
 
 /* 標頭樣式 */
 header {
-    background-color: var(--card-background); /* 米白背景 */
+    background-color: var(--card-background); 
     color: var(--text-dark);
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    border-bottom: 3px solid var(--primary-color); /* 復古紅底線 */
+    border-bottom: 3px solid var(--primary-color); 
     position: relative; 
 }
 
 header h1 {
-    /* *** 修正點：使用 Yellowtail 復古草寫字體 *** */
-    font-family: 'Yellowtail', cursive; 
+    /* *** 修正點：使用 Special Elite 打字機字體 *** */
+    font-family: 'Special Elite', monospace; 
     
     margin: 0 0 5px 0;
-    font-size: 3em; /* 增大標題字體 */
-    color: var(--primary-color); /* 復古紅標題 */
-    font-weight: 400; /* 草寫體通常不需要太粗 */
+    font-size: 2.8em; /* 稍微放大，以凸顯 Special Elite 的特色 */
+    color: var(--primary-color); 
+    font-weight: 400; /* Special Elite 本身較粗，使用 400 即可 */
+    letter-spacing: 2px; /* 增加字距，模擬打字機效果 */
+    text-transform: uppercase; /* 強制大寫，讓風格更一致 */
 }
 
 /* ------------------------------------------------------------------ */
@@ -64,7 +66,7 @@ header h1 {
 }
 
 .menu-icon div {
-    background-color: var(--primary-color); /* 復古紅線條 */
+    background-color: var(--primary-color); 
     width: 100%;
     height: 3px;
     border-radius: 5px;
@@ -98,7 +100,7 @@ nav {
 }
 
 nav a {
-    color: var(--text-dark); /* 深色文字 */
+    color: var(--text-dark); 
     background-color: var(--card-background); /* 米白按鈕背景 */
     text-decoration: none;
     padding: 12px 20px;
@@ -238,10 +240,10 @@ main {
     padding: 15px;
     border: 1px solid var(--border-light);
     border-radius: 8px;
-    background-color: var(--background-dark); /* 深灰藍背景 */
+    background-color: var(--background-dark); /* 深灰背景 */
     margin-bottom: 10px; 
     text-align: center;
-    color: var(--card-background); /* 讓文字在深色背景下可讀 */
+    color: var(--card-background); 
 }
 
 .currency-converter-box h3 {
@@ -269,7 +271,8 @@ main {
     border-radius: 8px; 
     width: 40%;
     text-align: center;
-    font-family: 'Huaiyuan Sans TC', sans-serif; /* 確保輸入框數字可讀，使用基礎字體 */
+    /* 輸入框數字字體使用打字機風格 */
+    font-family: 'Special Elite', monospace; 
     color: var(--text-dark);
 }
 
@@ -320,6 +323,11 @@ main {
     border-radius: 8px;
     margin-bottom: 15px;
     background-color: #e0d0c0; /* 略深的米色背景 */
+}
+.flight-detail-box h3 {
+    /* 讓航班標題也使用 Special Elite 字體 */
+    font-family: 'Special Elite', monospace; 
+    letter-spacing: 1px;
 }
 
 /* 分帳區塊雙按鈕佈局 */
@@ -397,7 +405,7 @@ footer {
     }
 
     nav a {
-        background-color: #e0d0c0; /* 略深的米色按鈕 */
+        background-color: #e0d0c0; 
         color: var(--text-dark);
         border-color: var(--border-light);
     }
@@ -425,7 +433,7 @@ footer {
         margin-top: 0;
     }
     
-    /* *** 手機上換算器輸入框佈局 (修正) *** */
+    /* *** 手機上換算器輸入框佈局 *** */
     .converter-inputs input {
         width: 45%; 
         padding: 12px; 
