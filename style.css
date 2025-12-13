@@ -8,8 +8,8 @@
 /* 定義復古主題色變數 (使用您提供的配色) */
 :root {
     --primary-color: #A6171C;   /* 主強調色：RUBY (復古紅) */
-    --accent-color: #F1C045;    /* 次要色：SUNNY (亮黃) */
-    --background-dark: #37474f; /* 頁面背景：深灰 (保持底色深一點，讓區塊更突出) */
+    --accent-color: #99AE61;    /* 次要色：SUNNY (亮黃) */
+    --background-dark:#CFB899; /* 頁面背景：深灰 (保持底色深一點，讓區塊更突出) */
     --card-background: #D6D0C5; /* 卡片/區塊背景：NATURAL (米白) */
     --text-dark: #37474f;       /* 深藍灰文字 (確保可讀性) */
     --border-light: #A6171C;    /* 復古紅邊框/分隔線 */
