@@ -1,46 +1,176 @@
 /* ------------------------------------------------------------------ */
-/* 待辦事項清單樣式 (Checklist) - 筆記本風格 */
+/* 最終版：強調紅色背景與亮黃文字主題 (新增綠色層次) - CSS */
 /* ------------------------------------------------------------------ */
 
-/* 新增變數用於筆記本內部 */
+/* 引入中文手繪字體 (Huaiyuan) 和 Henny Penny 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Henny+Penny&display=swap');
+
+/* 定義最終復古主題色變數 */
 :root {
-    /* ... (其他顏色變數保持不變) ... */
+    --primary-color: #591F1E;     /* 主強調色：深紅/咖啡色 (主要卡片背景和按鈕色) */
+    --accent-color: #F4C12A;      /* 次要色：亮黃 (主要文字、標題、強調色) */
+    --background-dark: #062C53;   /* 頁面背景：深藍 (頁面最底層/匯率換算器背景) */
+    --card-background: #591F1E;   /* 卡片/區塊背景：深紅 */
+    --secondary-card: #074F2A;    /* 深綠色 (用於次要區塊背景, 如航班資訊) */
+    --text-light: #F4C12A;        /* 淺色文字：亮黃色 */
+    --text-dark: #37474f;         /* 深藍灰文字 (用於亮黃背景) */
+    --border-light: #F4C12A;      /* 邊框使用亮黃色 */
+    
+    /* 筆記本專用顏色 */
     --notebook-paper: #FFFCE0;      /* 筆記本顏色：微黃米白 */
     --notebook-line: #A6CADF;       /* 筆記本線條顏色：淺藍 */
     --notebook-margin: #DC4545;     /* 筆記本邊緣線顏色：紅 */
 }
 
-/* 確保 .section-container 的基本樣式不變 (深紅背景) */
+/* 基本設定與字體 */
+body {
+    font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
+    line-height: 1.7; 
+    margin: 0;
+    padding: 0;
+    
+    background-color: var(--background-dark); /* 深藍背景 */
+    /* background-image: url('paper_texture.png'); 
+    background-repeat: repeat; 
+    background-attachment: fixed; */
+    
+    color: var(--text-light); /* 預設文字改為亮黃色 */
+}
+
+/* 標頭樣式 */
+header {
+    background-color: var(--card-background); /* 深紅背景 */
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid var(--accent-color); /* 亮黃底線 */
+    position: relative; 
+}
+
+header h1 {
+    font-family: 'Henny Penny', cursive; 
+    margin: 0 0 5px 0;
+    font-size: 3.5em; 
+    color: var(--accent-color); /* 標題使用亮黃色 */
+    font-weight: 400; 
+    letter-spacing: 3px; 
+    text-transform: uppercase; 
+}
+
+header p {
+    color: var(--text-light);
+}
+
+/* ------------------------------------------------------------------ */
+/* 漢堡菜單圖標樣式 */
+/* ------------------------------------------------------------------ */
+.menu-icon {
+    display: none; 
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.menu-icon div {
+    background-color: var(--accent-color); /* 漢堡圖標使用亮黃色 */
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ------------------------------------------------------------------ */
+/* 核心佈局：側邊欄容器 (電腦版佈局) */
+/* ------------------------------------------------------------------ */
+.main-layout-wrapper {
+    display: flex; 
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 20px; 
+}
+
+
+/* ------------------------------------------------------------------ */
+/* 導覽列樣式 - 側邊欄 (Sidebar) */
+/* ------------------------------------------------------------------ */
+nav {
+    background-color: transparent; 
+    padding: 0;
+    text-align: left;
+    position: sticky; 
+    top: 20px; 
+    z-index: 900; 
+    width: 240px; 
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+nav a {
+    color: var(--text-light); /* 亮黃文字 */
+    background-color: var(--card-background); /* 深紅按鈕背景 */
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 8px 0; 
+    border-radius: 8px; 
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    display: block; 
+    border: 1px solid var(--border-light);
+}
+
+nav a:hover {
+    background-color: var(--background-dark); /* Hover 變深藍 */
+    color: var(--accent-color); 
+    border-color: var(--accent-color); 
+}
+
+/* 主要內容區塊 */
+main {
+    padding: 0; 
+    max-width: 1000px;
+    flex-grow: 1; 
+}
+
+.section-container {
+    background-color: var(--card-background); /* 深紅區塊背景 */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    color: var(--text-light); /* 區塊內文字為亮黃色 */
+}
+
+.section-container h2 {
+    color: var(--accent-color); /* 標題使用亮黃色 */
+    border-bottom: 2px solid var(--border-light); 
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* 待辦事項清單樣式 (Checklist) - 筆記本風格 */
+/* ------------------------------------------------------------------ */
 
 .checklist-box {
-    padding: 25px 30px; /* 增加內邊距模擬紙張尺寸 */
+    padding: 25px 30px; 
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     background-color: var(--notebook-paper); /* 筆記本紙張色 */
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 輕微的陰影 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
     color: var(--text-dark); /* 筆記本內文字使用深色 */
     
     position: relative;
-    overflow: hidden; /* 隱藏筆記本邊緣線溢出 */
-}
-
-/* 1. 筆記本左側邊緣紅線 */
-.checklist-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 40px; /* 調整此數值控制紅線位置 */
-    bottom: 0;
-    width: 2px;
-    background-color: var(--notebook-margin);
-}
-
-/* 2. 筆記本橫線模擬 (使用重複漸變背景實現) */
-.checklist-box {
-    /* 這裡覆寫了 background-color，但在 style.css 中，
-       如果將 background-color 放在背景圖後面，它會被保留，
-       這裡用 background 簡寫來設定線條。 */
+    overflow: hidden; 
+    
+    /* 筆記本橫線模擬 (使用重複漸變背景實現) */
     background: 
         repeating-linear-gradient(
             to bottom,
@@ -49,11 +179,21 @@
             var(--notebook-line) 24px, 
             var(--notebook-line) 25px
         );
-    background-color: var(--notebook-paper); /* 確保基礎色是紙張色 */
-    background-position-y: 5px; /* 調整第一條線的位置 */
+    background-color: var(--notebook-paper); 
+    background-position-y: 5px; 
 }
 
-/* 任務輸入框和按鈕 (保持在深色主題上，但輸入框本身在筆記本上) */
+/* 筆記本左側邊緣紅線 */
+.checklist-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px; 
+    bottom: 0;
+    width: 2px;
+    background-color: var(--notebook-margin);
+}
+
 .task-input-container {
     display: flex;
     gap: 10px;
@@ -100,9 +240,9 @@
 #taskList li {
     display: flex;
     align-items: center;
-    padding: 3px 0; /* 配合 25px 的行高 */
+    padding: 3px 0; 
     min-height: 25px; 
-    border-bottom: none; /* 移除程式碼的分隔線，我們有背景線 */
+    border-bottom: none; 
 }
 
 #taskList li input[type="checkbox"] {
@@ -119,7 +259,6 @@
     font-size: 1em;
     color: var(--text-dark); /* 筆記本文字使用深色 */
     transition: all 0.3s;
-    /* 確保文字在紅線上不會被遮擋 */
     margin-left: 20px; 
 }
 
@@ -135,7 +274,7 @@
     cursor: pointer;
     font-size: 1em;
     transition: opacity 0.2s;
-    opacity: 0.7;
+    opacity: 0.8;
     color: var(--text-dark); /* 刪除鈕使用深色 */
 }
 
@@ -156,11 +295,317 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* RWD 調整 (保持輸入框在手機上的可視性) */
+/* Accordion (摺疊菜單) 樣式 - 行程表 */
+/* ------------------------------------------------------------------ */
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: #7d3338; /* 略淺的深紅/咖啡色 */
+    border: none;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.accordion-header span {
+    font-size: 0.8em;
+    color: var(--accent-color); 
+    margin-left: 10px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    white-space: nowrap; 
+}
+
+.accordion-item.active .accordion-header {
+    background-color: var(--accent-color); /* 展開時使用亮黃色 */
+    color: var(--text-dark); 
+}
+.accordion-item.active .accordion-header h3 {
+    color: var(--text-dark);
+}
+.accordion-item.active .accordion-header span {
+    color: var(--primary-color);
+}
+
+/* 內容區塊 */
+.accordion-content {
+    padding: 0 20px;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out; 
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-light);
+    color: var(--text-light);
+}
+
+.accordion-content p {
+    margin: 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed var(--border-light);
+    color: var(--text-light);
+}
+
+.accordion-content p:last-child {
+    border-bottom: none;
+    padding-bottom: 15px; 
+}
+.accordion-content a {
+    color: var(--accent-color); /* 連結使用亮黃 */
+}
+
+/* 亮點日強調 */
+.accordion-item.highlight-day {
+    border-color: var(--accent-color); /* 亮黃邊框 */
+}
+.accordion-item.highlight-day .accordion-header:hover {
+    background-color: #ffde82; 
+}
+.accordion-item.highlight-day.active .accordion-header {
+     background-color: var(--accent-color); /* 亮黃展開 */
+     color: var(--text-dark); 
+}
+.accordion-item.highlight-day.active .accordion-header h3 {
+     color: var(--text-dark);
+}
+.accordion-item.highlight-day.active .accordion-header span {
+     color: var(--primary-color);
+}
+
+/* ------------------------------------------------------------------ */
+/* 匯率換算器樣式 (獨立 Section) */
+/* ------------------------------------------------------------------ */
+.currency-converter-box { 
+    padding: 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background-color: var(--background-dark); /* 深藍背景 (保持強對比) */
+    margin-bottom: 10px; 
+    text-align: center;
+    color: var(--text-light); 
+}
+
+.currency-converter-box h3 {
+    color: var(--accent-color); /* 亮黃標題 */
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.currency-converter-box p {
+    color: var(--text-light);
+}
+
+.converter-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.converter-inputs input {
+    padding: 15px; 
+    font-size: 1.3em; 
+    
+    border: 1px solid var(--border-light);
+    border-radius: 8px; 
+    width: 40%;
+    text-align: center;
+    font-family: 'Special Elite', monospace; 
+    background-color: var(--text-light); /* 輸入框內使用亮黃背景 */
+    color: var(--text-dark);
+}
+
+.converter-inputs span {
+    font-size: 1.8em; 
+    color: var(--accent-color); /* 亮黃箭頭 */
+    font-weight: bold; 
+}
+
+/* ------------------------------------------------------------------ */
+/* 其他區塊樣式 (列表、按鈕、頁尾) */
 /* ------------------------------------------------------------------ */
 
+.day-card.highlight { 
+    border-left-color: var(--accent-color); 
+    background-color: var(--card-background); 
+}
+
+.day-card .note {
+    font-style: italic;
+    color: var(--accent-color); /* 備註使用亮黃色 */
+    font-weight: bold;
+}
+
+/* 按鈕樣式 (使用深紅) */
+.button {
+    background-color: var(--primary-color); 
+    color: var(--text-light);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+.button:hover {
+    background-color: var(--accent-color); /* Hover 變亮黃 */
+    color: var(--text-dark);
+}
+
+/* 航班/預報區塊 (使用深綠色) */
+.flight-detail-box {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid var(--border-light); 
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: var(--secondary-card); /* 深綠色 */
+}
+.flight-detail-box h3 {
+    font-family: 'Special Elite', monospace; 
+    letter-spacing: 1px;
+    color: var(--text-light);
+}
+.flight-detail-box ul li {
+    color: var(--text-light);
+}
+
+/* 分帳區塊雙按鈕佈局 (使用深綠色) */
+.split-link-box {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background-color: var(--secondary-card); /* 深綠色 */
+}
+.split-link-box h3 {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+.split-button {
+    flex: 1 1 45%; 
+    min-width: 200px; 
+    text-align: center;
+    padding: 12px 10px;
+    margin: 0; 
+    margin-top: 10px; 
+}
+
+
+/* 頁尾樣式 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--background-dark); /* 深藍頁尾 */
+    color: var(--text-light); 
+    font-size: 0.9em;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* RWD - 手機版適應與側邊欄切換 */
+/* ------------------------------------------------------------------ */
 @media (max-width: 992px) { 
+    /* 核心佈局：取消 Flexbox */
+    .main-layout-wrapper {
+        flex-direction: column; 
+        padding: 0;
+    }
+    
+    /* 顯示漢堡圖標 */
+    .menu-icon {
+        display: flex; 
+        z-index: 1001; 
+    }
+
+    /* 隱藏/顯示側邊欄 */
+    nav {
+        position: fixed; 
+        top: 0;
+        left: -280px; 
+        width: 250px; 
+        height: 100%;
+        background-color: var(--card-background); /* 深紅背景 */
+        padding: 60px 15px 20px;
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+        margin: 0;
+        display: block; 
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav a {
+        background-color: var(--secondary-card); /* 深綠色按鈕背景 */
+        color: var(--text-light);
+        border-color: var(--border-light);
+    }
+    nav a:hover {
+        background-color: var(--background-dark);
+        color: var(--accent-color);
+    }
+
+    main {
+        padding: 20px; 
+        width: 100%;
+    }
+    .flight-detail-box {
+        flex-direction: column;
+    }
+    
+    /* 筆記本左側邊緣紅線 (手機調整) */
     .checklist-box::before {
-        left: 30px; /* 手機上紅線位置靠左一點 */
+        left: 30px; 
+    }
+
+    /* 手機上分帳按鈕完全堆疊 */
+    .split-link-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .split-button {
+        flex: 1 1 100%; 
+        min-width: unset;
+        margin-top: 0;
+    }
+
+    /* *** 手機上換算器輸入框佈局 *** */
+    .converter-inputs input {
+        width: 45%; 
+        padding: 12px; 
+        font-size: 1.2em;
+    }
+    .converter-inputs span {
+        font-size: 1.5em; 
     }
 }
