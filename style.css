@@ -1,18 +1,18 @@
 /* ------------------------------------------------------------------ */
-/* 湖水藍主題、側邊欄菜單與可愛字體 (最終版 CSS) */
+/* 復古配色主題 (Retro Color Theme) - 最終版 CSS */
 /* ------------------------------------------------------------------ */
 
 /* 引入可愛中文字體 (Huaiyuan) 和可愛英文 (Gaegu) 字體 */
 @import url('https://fonts.googleapis.com/css2?family=Huaiyuan+Sans+TC:wght@400;700&family=Gaegu:wght@400;700&display=swap');
 
-/* 定義湖水藍主題色變數 */
+/* 定義復古主題色變數 */
 :root {
-    --primary-color: #008080; /* 主湖水藍 */
-    --accent-color: #FF7043; /* 暖橘色強調 */
-    --background-light: #f5f5f5; /* 淺米灰色背景 (非純白) */
-    --card-background: #ffffff; /* 卡片內容白色 */
-    --text-dark: #2c3e50; /* 深藍灰文字 */
-    --border-light: #b0c4de; /* 淺藍灰邊框 */
+    --primary-color: #AF1E17;   /* 主強調色：復古紅 (Retro Red) */
+    --accent-color: #99AE61;    /* 次要色：芥末綠 (Mustard Green) */
+    --background-dark: #3A4C54; /* 頁面背景：深灰藍 (Dark Slate) */
+    --card-background: #CFB899; /* 卡片/區塊背景：卡其米色 (Khaki Beige) */
+    --text-dark: #37474f;       /* 深藍灰文字 (保持良好的可讀性) */
+    --border-light: #5f747f;    /* 深色邊框/分隔線 */
 }
 
 /* 基本設定與字體 */
@@ -21,28 +21,26 @@ body {
     line-height: 1.7; 
     margin: 0;
     padding: 0;
-    background-color: var(--background-light); 
+    background-color: var(--background-dark); /* 深灰藍背景 */
     color: var(--text-dark); 
 }
 
 /* 標頭樣式 */
 header {
-    background-color: var(--card-background); 
+    background-color: var(--card-background); /* 卡其米色背景 */
     color: var(--text-dark);
     padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border-bottom: 3px solid var(--primary-color); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--primary-color); /* 復古紅底線 */
     position: relative; 
 }
 
 header h1 {
-    /* 修正點：明確指定 h1 使用 Gaegu 英文手繪字體 */
     font-family: 'Gaegu', cursive, sans-serif; 
-    
     margin: 0 0 5px 0;
     font-size: 2.5em;
-    color: var(--primary-color); 
+    color: var(--primary-color); /* 復古紅標題 */
     font-weight: 700; 
 }
 
@@ -63,15 +61,15 @@ header h1 {
 }
 
 .menu-icon div {
+    background-color: var(--primary-color); /* 復古紅線條 */
     width: 100%;
     height: 3px;
-    background-color: var(--primary-color);
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
 
 /* ------------------------------------------------------------------ */
-/* 核心佈局：側邊欄容器 (電腦版佈局) */
+/* 核心佈局與主要內容區塊 */
 /* ------------------------------------------------------------------ */
 .main-layout-wrapper {
     display: flex; 
@@ -80,6 +78,26 @@ header h1 {
     padding: 20px; 
 }
 
+main {
+    padding: 0; 
+    max-width: 1000px;
+    flex-grow: 1; 
+}
+
+.section-container {
+    background-color: var(--card-background); /* 卡其米色區塊背景 */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 增加陰影對比 */
+}
+
+.section-container h2 {
+    color: var(--primary-color); /* 復古紅標題 */
+    border-bottom: 2px solid var(--border-light); 
+    padding-bottom: 10px;
+    margin-top: 0;
+}
 
 /* ------------------------------------------------------------------ */
 /* 導覽列樣式 - 側邊欄 (Sidebar) */
@@ -98,7 +116,7 @@ nav {
 
 nav a {
     color: var(--text-dark); 
-    background-color: var(--card-background); 
+    background-color: var(--card-background); /* 卡其米色按鈕背景 */
     text-decoration: none;
     padding: 12px 20px;
     margin: 8px 0; 
@@ -110,31 +128,9 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color); /* Hover 變復古紅 */
     color: white; 
     border-color: var(--primary-color);
-}
-
-/* 主要內容區塊 */
-main {
-    padding: 0; 
-    max-width: 1000px;
-    flex-grow: 1; 
-}
-
-.section-container {
-    background-color: var(--card-background); 
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
-}
-
-.section-container h2 {
-    color: var(--primary-color); 
-    border-bottom: 2px solid var(--border-light); 
-    padding-bottom: 10px;
-    margin-top: 0;
 }
 
 /* ------------------------------------------------------------------ */
@@ -149,7 +145,7 @@ main {
 
 .accordion-header {
     width: 100%;
-    background-color: #f7f7f7; 
+    background-color: #e0d0b0; /* 略深的米色背景 */
     border: none;
     padding: 15px 20px;
     text-align: left;
@@ -180,7 +176,7 @@ main {
 }
 
 .accordion-item.active .accordion-header {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color); /* 展開時使用復古紅 */
     color: white;
 }
 .accordion-item.active .accordion-header h3 {
@@ -203,7 +199,7 @@ main {
 .accordion-content p {
     margin: 10px 0;
     padding-bottom: 5px;
-    border-bottom: 1px dashed #eee;
+    border-bottom: 1px dashed var(--border-light);
     color: var(--text-dark);
 }
 
@@ -214,15 +210,22 @@ main {
 
 /* 亮點日強調 */
 .accordion-item.highlight-day {
-    border-color: var(--accent-color);
+    border-color: var(--accent-color); /* 芥末綠邊框 */
 }
 .accordion-item.highlight-day .accordion-header:hover {
-    background-color: #ffe0b2;
+    background-color: #c8d3b3; /* 略淺的芥末綠 Hover */
 }
 .accordion-item.highlight-day.active .accordion-header {
-     background-color: var(--accent-color); 
-     color: white;
+     background-color: var(--accent-color); /* 芥末綠展開 */
+     color: var(--text-dark);
 }
+.accordion-item.highlight-day.active .accordion-header h3 {
+     color: var(--text-dark);
+}
+.accordion-item.highlight-day.active .accordion-header span {
+     color: var(--primary-color);
+}
+
 
 /* ------------------------------------------------------------------ */
 /* 匯率換算器樣式 (獨立 Section) */
@@ -231,15 +234,19 @@ main {
     padding: 15px;
     border: 1px solid var(--border-light);
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: var(--background-dark); /* 深灰藍背景 */
     margin-bottom: 10px; 
     text-align: center;
+    color: var(--card-background); /* 讓文字在深色背景下可讀 */
 }
 
 .currency-converter-box h3 {
-    color: var(--primary-color);
+    color: var(--accent-color); /* 芥末綠標題 */
     margin-top: 0;
     margin-bottom: 5px;
+}
+.currency-converter-box p {
+    color: var(--card-background);
 }
 
 .converter-inputs {
@@ -251,7 +258,7 @@ main {
 }
 
 .converter-inputs input {
-    /* *** 放大輸入框樣式 *** */
+    /* *** 加大輸入框樣式 *** */
     padding: 15px; 
     font-size: 1.3em; 
     
@@ -260,12 +267,13 @@ main {
     width: 40%;
     text-align: center;
     font-family: 'Gaegu', cursive, sans-serif; 
+    color: var(--text-dark);
 }
 
 .converter-inputs span {
     font-size: 1.8em; 
-    color: var(--text-dark);
-    font-weight: bold; /* 讓箭頭更明顯 */
+    color: var(--primary-color); /* 復古紅箭頭 */
+    font-weight: bold; 
 }
 
 /* ------------------------------------------------------------------ */
@@ -273,19 +281,19 @@ main {
 /* ------------------------------------------------------------------ */
 
 .day-card.highlight { 
-    border-left-color: var(--accent-color); 
-    background-color: #fff8e1; 
+    border-left-color: var(--primary-color); /* 復古紅強調 */
+    background-color: var(--card-background); 
 }
 
 .day-card .note {
     font-style: italic;
-    color: var(--accent-color);
+    color: var(--primary-color); /* 復古紅備註 */
     font-weight: bold;
 }
 
-/* 按鈕樣式 (使用強調色) */
+/* 按鈕樣式 (使用復古紅) */
 .button {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color); 
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -295,10 +303,11 @@ main {
     font-weight: bold;
 }
 .button:hover {
-    background-color: #c0392b;
+    background-color: var(--accent-color); /* Hover 變芥末綠 */
+    color: var(--text-dark);
 }
 
-/* 航班/預報區塊 (淺色版本) */
+/* 航班/預報區塊 */
 .flight-detail-box {
     display: flex;
     justify-content: space-around;
@@ -307,7 +316,7 @@ main {
     border: 1px solid var(--border-light); 
     border-radius: 8px;
     margin-bottom: 15px;
-    background-color: #f9f9f9; 
+    background-color: #e0d0b0; /* 略深的米色背景 */
 }
 
 /* 分帳區塊雙按鈕佈局 */
@@ -320,7 +329,7 @@ main {
     padding: 15px;
     border: 1px solid var(--border-light);
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #e0d0b0; /* 略深的米色背景 */
 }
 .split-link-box h3 {
     width: 100%;
@@ -342,8 +351,8 @@ main {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--primary-color); 
-    color: white;
+    background-color: var(--background-dark); /* 深灰藍頁尾 */
+    color: var(--card-background); /* 卡其米色文字 */
     font-size: 0.9em;
 }
 
@@ -371,7 +380,7 @@ footer {
         left: -280px; 
         width: 250px; 
         height: 100%;
-        background-color: var(--card-background); 
+        background-color: var(--card-background); /* 卡其米色側邊欄背景 */
         padding: 60px 15px 20px;
         box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
         transition: left 0.3s ease-in-out;
@@ -385,7 +394,7 @@ footer {
     }
 
     nav a {
-        background-color: #f0f0f0; 
+        background-color: #e0d0b0; /* 略深的米色按鈕 */
         color: var(--text-dark);
         border-color: var(--border-light);
     }
