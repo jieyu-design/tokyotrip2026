@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------ */
-/* 最終版：強調紅色背景與亮黃文字主題 - CSS */
+/* 最終版：強調紅色背景與亮黃文字主題 (新增綠色層次) - CSS */
 /* ------------------------------------------------------------------ */
 
 /* 引入中文手繪字體 (Huaiyuan) 和 Henny Penny 字體 */
@@ -7,13 +7,14 @@
 
 /* 定義最終復古主題色變數 */
 :root {
-    --primary-color: #591F1E;   /* 主強調色：深紅/咖啡色 (主要背景和按鈕色) */
-    --accent-color: #F4C12A;    /* 次要色：亮黃 (主要文字、標題、強調色) */
-    --background-dark: #062C53; /* 頁面背景：深藍 (頁面最底層/匯率換算器背景) */
-    --card-background: #591F1E; /* 卡片/區塊背景：使用主色 (深紅) 來替換深綠 */
-    --text-light: #F4C12A;      /* 淺色文字：使用亮黃色來替換淺色文字 */
-    --text-dark: #37474f;       /* 深藍灰文字 (用於亮黃背景) */
-    --border-light: #F4C12A;    /* 邊框使用亮黃色 */
+    --primary-color: #591F1E;     /* 主強調色：深紅/咖啡色 (主要卡片背景和按鈕色) */
+    --accent-color: #F4C12A;      /* 次要色：亮黃 (主要文字、標題、強調色) */
+    --background-dark: #062C53;   /* 頁面背景：深藍 (頁面最底層/匯率換算器背景) */
+    --card-background: #591F1E;   /* 卡片/區塊背景：深紅 */
+    --secondary-card: #074F2A;    /* ✅ 新增：深綠色 (用於次要區塊背景) */
+    --text-light: #F4C12A;        /* 淺色文字：亮黃色 */
+    --text-dark: #37474f;         /* 深藍灰文字 (用於亮黃背景) */
+    --border-light: #F4C12A;      /* 邊框使用亮黃色 */
 }
 
 /* 基本設定與字體 */
@@ -121,7 +122,7 @@ nav a {
 
 nav a:hover {
     background-color: var(--background-dark); /* Hover 變深藍 */
-    color: var(--accent-color); /* 邊框和文字變亮黃 */
+    color: var(--accent-color); 
     border-color: var(--accent-color); 
 }
 
@@ -160,7 +161,8 @@ main {
 
 .accordion-header {
     width: 100%;
-    background-color: #7d3338; /* 略淺的紅色背景 */
+    /* ✅ 略淺的深紅/咖啡色 */
+    background-color: #7d3338; 
     border: none;
     padding: 15px 20px;
     text-align: left;
@@ -184,7 +186,7 @@ main {
 
 .accordion-header span {
     font-size: 0.8em;
-    color: var(--accent-color); /* 箭頭使用亮黃色 */
+    color: var(--accent-color); 
     margin-left: 10px;
     opacity: 0.9;
     transition: opacity 0.3s;
@@ -334,7 +336,7 @@ main {
     border: 1px solid var(--border-light); 
     border-radius: 8px;
     margin-bottom: 15px;
-    background-color: #7d3338; /* 略淺的紅色背景 */
+    background-color: var(--secondary-card); /* ✅ 使用深綠色 */
 }
 .flight-detail-box h3 {
     font-family: 'Special Elite', monospace; 
@@ -355,7 +357,7 @@ main {
     padding: 15px;
     border: 1px solid var(--border-light);
     border-radius: 8px;
-    background-color: #7d3338; /* 略淺的紅色背景 */
+    background-color: var(--secondary-card); /* ✅ 使用深綠色 */
 }
 .split-link-box h3 {
     width: 100%;
@@ -420,7 +422,7 @@ footer {
     }
 
     nav a {
-        background-color: #7d3338; /* 略淺的紅色按鈕 */
+        background-color: var(--secondary-card); /* 深綠色按鈕背景 */
         color: var(--text-light);
         border-color: var(--border-light);
     }
