@@ -12,13 +12,12 @@
     --background-dark: #062C53; /* 頁面背景：深藍 */
     --card-background: #074F2A; /* 卡片/區塊背景：深綠 */
     --text-light: #f5f5f5;      /* 淺色文字 (用於深色背景) */
-    --text-dark: #37474f;       /* 深藍灰文字 (主要用於淺色區塊/可讀性要求高的地方) */
+    --text-dark: #37474f;       /* 深藍灰文字 (主要用於亮黃背景/可讀性要求高的地方) */
     --border-light: #591F1E;    /* 邊框使用深紅 */
 }
 
 /* 基本設定與字體 */
 body {
-    /* 中文內容維持 Huaiyuan Sans TC */
     font-family: 'Huaiyuan Sans TC', 'Noto Sans TC', sans-serif;
     line-height: 1.7; 
     margin: 0;
@@ -26,9 +25,9 @@ body {
     
     /* 紋路背景設定 (使用深藍背景色，若有圖片請自行解除註釋) */
     background-color: var(--background-dark);
-    /* background-image: url('paper_texture.png'); 
-    background-repeat: repeat; 
-    background-attachment: fixed; */
+/* background-image: url('paper_texture.png'); 
+   background-repeat: repeat; 
+   background-attachment: fixed; */
     
     color: var(--text-light); /* 預設文字改為淺色 */
 }
@@ -288,7 +287,7 @@ main {
     border-radius: 8px; 
     width: 40%;
     text-align: center;
-    /* 輸入框數字字體使用打字機風格 */
+    /* 輸入框數字字體使用 Special Elite 讓數字也有打字機風格 */
     font-family: 'Special Elite', monospace; 
     background-color: var(--text-light); /* 輸入框內使用淺色背景 */
     color: var(--text-dark);
@@ -322,7 +321,6 @@ main {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 8px;
-    margin-top: 15px;
     transition: background-color 0.3s, color 0.3s;
     font-weight: bold;
 }
@@ -413,7 +411,7 @@ footer {
         left: -280px; 
         width: 250px; 
         height: 100%;
-        background-color: var(--card-background); /* 深綠背景 */
+        background-color: var(--card-background); 
         padding: 60px 15px 20px;
         box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
         transition: left 0.3s ease-in-out;
@@ -427,7 +425,7 @@ footer {
     }
 
     nav a {
-        background-color: #176535; /* 略淺的綠色按鈕 */
+        background-color: #176535; 
         color: var(--text-light);
         border-color: var(--border-light);
     }
