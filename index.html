@@ -15,8 +15,6 @@
 
     <header>
         <h1>Meow Tokyo Trip 2026</h1> 
-       
-        
         <div class="menu-icon" onclick="toggleSidebar()">
             <div></div>
             <div></div>
@@ -27,7 +25,8 @@
     <div class="main-layout-wrapper">
         
         <nav id="sidebar-nav">
-            <a href="#checklist">📋 待辦清單</a> <a href="#flights">✈️ 航班時段</a>
+            <a href="#checklist">📋 待辦清單</a> 
+            <a href="#flights">✈️ 航班時段</a>
             <a href="#itinerary">🗓️ 行程總覽</a>
             <a href="#food">🍣 美食分類</a>
             <a href="#currency">💴 匯率換算</a> 
@@ -40,15 +39,11 @@
             <section id="checklist" class="section-container">
                 <h2>📋 行前待辦清單 (Checklist)</h2>
                 <div class="checklist-box">
-                    
                     <div class="task-input-container">
                         <input type="text" id="newTaskInput" placeholder="新增待辦或打包物品">
                         <button onclick="addTask()">新增</button>
                     </div>
-
-                    <ul id="taskList">
-                        </ul>
-                    
+                    <ul id="taskList"></ul>
                     <button id="clearCompletedBtn" onclick="clearCompletedTasks()">清除已完成</button>
                 </div>
             </section>
@@ -84,12 +79,8 @@
                             <h3>Day 1 - 01/08 (四) | 抵達與住宿 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                下午：抵達 NRT 成田機場
-                            </p>
-                            <p>
-                                晚上：前往 <a href="https://www.google.com/maps/search/The+Apartment+Hotel+by+Stylio+Yoyogi+1" target="_blank">The Apartment Hotel by Stylio Yoyogi 1</a> (抵達)
-                            </p>
+                            <p>下午：抵達 NRT 成田機場</p>
+                            <p>晚上：前往 <a href="https://maps.google.com/?q=The+Apartment+Hotel+by+Stylio+Yoyogi+1" target="_blank">The Apartment Hotel by Stylio Yoyogi 1</a></p>
                         </div>
                     </div>
 
@@ -98,18 +89,10 @@
                             <h3>Day 2 - 01/09 (五) | 數位藝術與澀谷 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/teamLab+Borderless+數位藝術美術館" target="_blank">teamLab Borderless 數位藝術美術館</a>
-                            </p>
-                            <p>
-                                午餐：<a href="https://www.google.com/maps/search/敘敘苑+六本木本店" target="_blank">敘敘苑 六本木本店</a> (已訂位)
-                            </p>
-                            <p>
-                                下午/傍晚：<a href="https://www.google.com/maps/search/neel神宮前" target="_blank">neel神宮前</a> → <a href="https://www.google.com/maps/search/GARIGUETTE" target="_blank">GARIGUETTE</a> → <a href="https://www.google.com/maps/search/I'm+donut+SHIBUYA" target="_blank">I'm donut ? SHIBUYA</a> → <a href="https://www.google.com/maps/search/澀谷+SKY" target="_blank">澀谷 SKY</a>
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/Afuri+Shibuya+Dōgenzaka" target="_blank">Afuri Shibuya Dōgenzaka</a>
-                            </p>
+                            <p>上午：<a href="https://maps.google.com/?q=teamLab+Borderless" target="_blank">teamLab Borderless 美術館</a></p>
+                            <p>午餐：敘敘苑 六本木本店 (已訂位)</p>
+                            <p>下午：澀谷 SKY & 逛街</p>
+                            <p>晚餐：Afuri Shibuya Dōgenzaka</p>
                         </div>
                     </div>
                     
@@ -118,15 +101,9 @@
                             <h3>Day 3 - 01/10 (六) | 表參道、代官山與中目黑 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/TOURNAGE+Jingumae" target="_blank">TOURNAGE Jingumae</a> → <a href="https://www.google.com/maps/search/表參道Hills" target="_blank">表參道Hills</a> → <a href="https://www.google.com/maps/search/The+Matcha+Tokyo+Omotesandō" target="_blank">The Matcha Tokyo Omotesandō</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/涉谷逛街區" target="_blank">涉谷逛街區</a> → <a href="https://www.google.com/maps/search/Shake+Shack+Shibuya" target="_blank">Shake Shack Shibuya</a> → <a href="https://www.google.com/maps/search/代官山" target="_blank">代官山</a> → <a href="https://www.google.com/maps/search/中目黑" target="_blank">中目黑</a>
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/MEAT+MAN+Roppongi" target="_blank">MEAT MAN Roppongi</a>
-                            </p>
+                            <p>上午：表參道 Hills & The Matcha Tokyo</p>
+                            <p>下午：代官山 & 中目黑散策</p>
+                            <p>晚餐：MEAT MAN Roppongi</p>
                         </div>
                     </div>
 
@@ -135,15 +112,9 @@
                             <h3>Day 4 - 01/11 (日) | 原宿與新宿購物 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/Path+Tokyo" target="_blank">Path</a> → <a href="https://www.google.com/maps/search/原宿" target="_blank">原宿</a> → <a href="https://www.google.com/maps/search/Sama+Curry+Meijijingumae" target="_blank">Sama Curry Meijijingumae</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/Ikedaya+TeaStore+Matcha" target="_blank">Ikedaya TeaStore Matcha</a> → <a href="https://www.google.com/maps/search/HARBS+LUMINE+EST新宿店" target="_blank">HARBS LUMINE EST新宿店</a> → <a href="https://www.google.com/maps/search/新宿區" target="_blank">新宿區</a>
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/東京油組總本店+西新宿組" target="_blank">東京油組總本店 西新宿組</a>
-                            </p>
+                            <p>上午：Path 早餐 & 原宿</p>
+                            <p>下午：新宿 LUMINE EST (HARBS)</p>
+                            <p>晚餐：東京油組總本店</p>
                         </div>
                     </div>
                     
@@ -152,15 +123,8 @@
                             <h3>Day 5 - 01/12 (一) | 築地、淺草與上野 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/築地場外市場" target="_blank">築地場外市場</a> (早市) → <a href="https://www.google.com/maps/search/BONGEN+COFFEE+Tokyo+Ginza" target="_blank">BONGEN COFFEE Tokyo Ginza</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/仲見世商店街" target="_blank">仲見世商店街</a> → <a href="https://www.google.com/maps/search/淺草寺+雷門" target="_blank">淺草寺 雷門</a> → <a href="https://www.google.com/maps/search/八十八良葉舍+淺草" target="_blank">八十八良葉舍 淺草</a> → <a href="https://www.google.com/maps/search/Suzukien+Asakusa+matcha+gelato" target="_blank">Suzukien Asakusa matcha gelato</a>
-                            </p>
-                            <p>
-                                傍晚/晚餐：<a href="https://www.google.com/maps/search/上野" target="_blank">上野</a> → <a href="https://www.google.com/maps/search/上野阿美橫町" target="_blank">上野阿美橫町</a>
-                            </p>
+                            <p>上午：築地場外市場 & 淺草雷門</p>
+                            <p>下午：上野阿美橫町</p>
                             <p class="note">⚠️ 晚餐備註：考慮在百貨公司or大超市買晚餐回去煮。</p>
                         </div>
                     </div>
@@ -170,13 +134,9 @@
                             <h3>Day 6 - 01/13 (二) | 富士山一日遊 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/山中湖" target="_blank">山中湖</a> → <a href="https://www.google.com/maps/search/THE+PARK+Fujiyoshida" target="_blank">THE PARK</a> → <a href="https://www.google.com/maps/search/忍野八海" target="_blank">忍野八海</a> → <a href="https://www.google.com/maps/search/Shimoyoshida" target="_blank">Shimoyoshida</a>
-                            </p>
-                            <p>
-                                下午：<a href="https://www.google.com/maps/search/新倉富士浅間神社" target="_blank">新倉富士浅間神社</a> (要爬很多樓梯) → <a href="https://www.google.com/maps/search/產屋崎神社" target="_blank">產屋崎神社</a> → <a href="https://www.google.com/maps/search/大石公園" target="_blank">大石公園</a>
-                            </p>
-                            <p class="note">⚠️ 出發時間：早上 07:00 就要早早早出發！</p>
+                            <p>上午：山中湖 & 忍野八海</p>
+                            <p>下午：新倉富士浅間神社 & 大石公園</p>
+                            <p class="note">⚠️ 出發時間：早上 07:00 出發！注意保暖。</p>
                         </div>
                     </div>
                     
@@ -185,15 +145,9 @@
                             <h3>Day 7 - 01/14 (三) | 鎌倉與江之島 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                午餐：<a href="https://www.google.com/maps/search/今半Ningyocho+Imahan+Shinjuku" target="_blank">今半Ningyocho Imahan Shinjuku Takashimaya</a> (尚未訂位)
-                            </p>
-                            <p>
-                                下午：<a href="https://www.google.com/maps/search/鶴岡八幡宮" target="_blank">鶴岡八幡宮</a> → <a href="https://www.google.com/maps/search/鎌倉小町通" target="_blank">鎌倉小町通</a> → <a href="https://www.google.com/maps/search/Giraffa+Curry+Pan" target="_blank">Giraffa Curry Pan</a> → <a href="https://www.google.com/maps/search/鎌倉大佛殿高德院" target="_blank">鎌倉大佛殿高德院</a> → <a href="https://www.google.com/maps/search/鎌倉高校前" target="_blank">鎌倉高校前</a> (灌籃高手)
-                            </p>
-                            <p>
-                                傍晚/晚餐：<a href="https://www.google.com/maps/search/Enoshima+Nagisa+Parking+Area" target="_blank">Enoshima Nagisa Parking Area</a> → <a href="https://www.google.com/maps/search/利久牛舌+LUMINE+EST新宿店" target="_blank">利久牛舌 LUMINE EST新宿店</a> (晚餐)
-                            </p>
+                            <p>午餐：今半壽喜燒 新宿店</p>
+                            <p>下午：鎌倉小町通 & 江之島</p>
+                            <p>晚餐：利久牛舌 新宿店</p>
                         </div>
                     </div>
 
@@ -202,15 +156,9 @@
                             <h3>Day 8 - 01/15 (四) | 日本橋與銀座美食 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/BUTTER+Hoboku+Rakunojo" target="_blank">BUTTER Hoboku Rakunojo</a> → <a href="https://www.google.com/maps/search/五代目+花山烏冬+日本橋店" target="_blank">五代目 花山烏冬 日本橋店</a>
-                            </p>
-                            <p>
-                                午餐/下午：<a href="https://www.google.com/maps/search/Tendon+Itsuki+Ginza" target="_blank">Tendon Itsuki Ginza</a> → <a href="https://www.google.com/maps/search/PATISSERIE+TEN&" target="_blank">PATISSERIE TEN&</a> (強強強泡芙)
-                            </p>
-                            <p>
-                                晚餐：<a href="https://www.google.com/maps/search/Yakiniku+Yamashofu+Omotesando+store" target="_blank">Yakiniku Yamashofu Omotesando store</a> → <a href="https://www.google.com/maps/search/Iruca+Tokyo+Roppongi" target="_blank">Iruca Tokyo Roppongi</a> (備案：聽說很好吃，但排不進去了)
-                            </p>
+                            <p>上午：花山烏冬 日本橋店</p>
+                            <p>下午：銀座天丼 & 強強強泡芙</p>
+                            <p>晚餐：燒肉 山笑 Omotesando</p>
                         </div>
                     </div>
                     
@@ -219,12 +167,8 @@
                             <h3>Day 9 - 01/16 (五) | 告別東京 <span>點擊展開</span></h3>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                上午：<a href="https://www.google.com/maps/search/Levain+Yoyogiuehara" target="_blank">Levain</a> → 前往 NRT 成田國際機場
-                            </p>
-                            <p>
-                                下午：搭乘航班回國
-                            </p>
+                            <p>上午：最後採買 & 前往成田機場</p>
+                            <p>下午：搭機返國</p>
                         </div>
                     </div>
 
@@ -233,35 +177,21 @@
             
             <section id="food" class="section-container">
                 <h2>🍣 美食分類清單</h2>
-                
                 <div class="food-list">
-                    
                     <h3>燒肉 / 壽喜燒</h3>
                     <ul class="task-list">
-                        <li>敘敘苑 六本木本店 (Day 2 午餐) - <span class="note">已訂位</span></li>
-                        <li>MEAT MAN Roppongi (Day 3 晚餐)</li>
-                        <li>今半 Ningyocho (Day 7 午餐) - <span class="note">尚未訂位</span></li>
-                        <li>Yakiniku Yamashofu Omotesando store (Day 8 晚餐)</li>
+                        <li>敘敘苑 六本木本店 - <span class="note">已訂位</span></li>
+                        <li>MEAT MAN Roppongi</li>
+                        <li>今半 Ningyocho - <span class="note">尚未訂位</span></li>
+                        <li>燒肉 山笑 Omotesando</li>
                     </ul>
-
                     <h3>拉麵 / 烏冬 / 天丼</h3>
                     <ul class="task-list">
-                        <li>Afuri Shibuya Dōgenzaka (Day 2 晚餐)</li>
-                        <li>東京油組總本店 西新宿組 (Day 4 晚餐)</li>
-                        <li>五代目 花山烏冬 日本橋店 (Day 8 午餐)</li>
-                        <li>Tendon Itsuki Ginza (Day 8 午餐)</li>
-                        <li>Iruca Tokyo Roppongi (Day 8 備案) - <span class="note">聽說很好吃，但排不進去了 (可作為備案)</span></li>
+                        <li>Afuri 柚子鹽拉麵</li>
+                        <li>東京油組總本店</li>
+                        <li>花山烏冬 日本橋店</li>
+                        <li>Tendon Itsuki 銀座天丼</li>
                     </ul>
-                    
-                    <h3>甜點 / 咖啡 / 抹茶</h3>
-                    <ul class="task-list">
-                        <li>The Matcha Tokyo Omotesandō (Day 3)</li>
-                        <li>HARBS LUMINE EST新宿店 (Day 4)</li>
-                        <li>Suzukien Asakusa matcha gelato (Day 5)</li>
-                        <li>BONGEN COFFEE Tokyo Ginza (Day 5)</li>
-                        <li>PATISSERIE TEN& (Day 8) - <span class="note">強強強泡芙！</span></li>
-                    </ul>
-
                 </div>
             </section>
 
@@ -270,109 +200,77 @@
                 <div class="currency-converter-box">
                     <h3>雙向即時匯率換算器</h3>
                     <p>當前參考匯率：1 JPY ≈ 0.20 TWD</p>
-                    
                     <div class="converter-inputs">
-                        <input type="number" id="twdInput" oninput="convertCurrencyTWD()" placeholder="輸入台幣金額 (TWD)">
+                        <input type="number" id="twdInput" oninput="convertCurrencyTWD()" placeholder="台幣 TWD">
                         <span>⇆</span>
-                        <input type="number" id="jpyInput" oninput="convertCurrencyJPY()" placeholder="輸入日幣金額 (JPY)">
+                        <input type="number" id="jpyInput" oninput="convertCurrencyJPY()" placeholder="日幣 JPY">
                     </div>
                 </div>
             </section>
             
             <section id="split-bill" class="section-container">
                 <h2>💰 分帳記錄 </h2>
-                
                 <div class="split-link-box">
                     <h3>點擊前往App分帳</h3>
-                    
-                    <a href="https://liff.line.me/1655320992-Y8GowEpw/g/mFh5ebFybya4tdXbLRnn3a" target="_blank" class="button split-button split-jpy">
-                        日幣 (JPY) 💴 🔗
-                    </a>
-
-                    <a href="https://liff.line.me/1655320992-Y8GowEpw/g/mgjxCYXDf88ohBzfVTZBwq" target="_blank" class="button split-button split-twd">
-                        台幣 (TWD) 🇹🇼 🔗
-                    </a>
+                    <a href="https://liff.line.me/1655320992-Y8GowEpw/g/mFh5ebFybya4tdXbLRnn3a" target="_blank" class="button split-button split-jpy">日幣 (JPY) 💴</a>
+                    <a href="https://liff.line.me/1655320992-Y8GowEpw/g/mgjxCYXDf88ohBzfVTZBwq" target="_blank" class="button split-button split-twd">台幣 (TWD) 🇹🇼</a>
                 </div>
             </section>
             
             <section id="info" class="section-container">
                 <h2>💡 實用資訊</h2>
                 
+                <div style="margin-bottom: 25px;">
+                    <h3>☀️ 東京 9 天氣候預報 (1/08 - 1/16)</h3>
+                    <div style="margin-bottom: 10px; padding: 10px; background-color: var(--secondary-card); border-radius: 8px;">
+                        <p style="margin: 0;">🛬 <b>1/08 落地提醒：</b> 預估 5°C ~ 11°C。16:45 日落後氣溫驟降，搭車前往飯店請備妥大衣。</p>
+                    </div>
+                    
+                    <div style="border: 2px solid var(--accent-color); border-radius: 12px; overflow: hidden; background-color: var(--primary-color);">
+                        <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/35original69139original69/tokyo/" 
+                           data-label_1="TOKYO" 
+                           data-label_2="東京即時預報" 
+                           data-font="Arial" 
+                           data-icons="Climacons Animated" 
+                           data-mode="Forecast" 
+                           data-theme="pure" 
+                           data-basecolor="#591F1E" 
+                           data-accent="#F4C12A" 
+                           data-textcolor="#F4C12A" 
+                           data-highcolor="#F4C12A" 
+                           data-lowcolor="#A6CADF"
+                           data-days="7">TOKYO WEATHER</a>
+                        <script>
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                        </script>
+                    </div>
+
+                    <div class="split-link-box" style="margin-top: 15px; background-color: transparent; border: none; padding: 0;">
+                        <a href="https://www.accuweather.com/zh/jp/tokyo/212829/daily-weather-forecast/212829" target="_blank" class="button split-button" style="width: 100%; margin-bottom: 8px;">🔍 查看完整 9 天與每小時詳細預報</a>
+                    </div>
+                </div>
+
                 <div class="accordion-item" id="accordion-subway">
                     <button class="accordion-header">
                         <h3>🚇 東京地鐵指南 (72小時券資訊) <span>點擊展開</span></h3>
                     </button>
                     <div class="accordion-content">
                         <h4>東京地鐵路線圖</h4>
-                        <p>點擊下方的圖片可放大查看。</p>
-                        
-                        <img src="tokyo_subway_map.png" alt="東京地鐵路線圖" onclick="window.open(this.src)" style="max-width: 100%; height: auto; border: 1px solid var(--border-light); border-radius: 6px; margin-bottom: 15px; cursor: pointer;">
-                        
-                        <p class="note">⚠️ 提示：如果點擊後無法放大，請使用雙指縮放功能。</p>
-
-
-                        <h4>72小時地鐵券 (Tokyo Subway Ticket) 不適用路線</h4>
-                        <ul class="task-list">
-                            <li>所有 JR 線：包括 JR 山手線、JR 中央線等.</li>
-                            <li>所有私鐵線：包括京王線、小田急線、東急線等.</li>
-                            <li>部分公營路線：百合海鷗線、日暮里-舍人線、Tokyo Sakura Tram (都電荒川線).</li>
-                            <li>重要提醒：此券不適用於往返機場的 Skyliner (京成電鐵特急).</li>
-                            <li>✅ 適用範圍：東京 Metro (9 條線) + 都營地下鐵 (4 條線).</li>
-                        </ul>
+                        <img src="tokyo_subway_map.png" alt="地鐵圖" onclick="window.open(this.src)" style="max-width: 100%; border: 1px solid var(--border-light); border-radius: 6px; cursor: pointer;">
+                        <p class="note">✅ 適用範圍：東京 Metro (9 條線) + 都營地下鐵 (4 條線)。不適用 JR 線與 Skyliner。</p>
                     </div>
                 </div> 
 
-                <h3>☀️ 每日氣候預報 (1/8 - 1/16)</h3>
-                <p>以下為預測數據，請以出發前一天的即時預報為準：</p>
-                <div class="flight-detail-box">
-                    <div class="task-list">
-                        <h4>1/8 (四) - 1/12 (一)</h4>
-                        <ul>
-                            <li>1/8：☀️ 晴朗，5°C ~ 11°C</li>
-                            <li>1/9：🌤️ 多雲，3°C ~ 9°C</li>
-                            <li>1/10：☀️ 晴朗，4°C ~ 10°C</li>
-                            <li>1/11：☀️ 晴朗，3°C ~ 8°C</li>
-                            <li>1/12：🌤️ 多雲，2°C ~ 7°C (築地/淺草)</li>
-                        </ul>
-                    </div>
-                    <div class="task-list">
-                        <h4>1/13 (二) - 1/16 (五)</h4>
-                        <ul>
-                            <li>1/13：🥶 山區晴朗，-3°C ~ 5°C (富士山)</li>
-                            <li>1/14：☀️ 晴朗，4°C ~ 11°C （鎌倉）</li>
-                            <li>1/15：🌤️ 多雲，5°C ~ 12°C (銀座)</li>
-                            <li>1/16：☀️ 晴朗，3°C ~ 10°C (返程日)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 20px;"> 穿著建議與提醒</h3>
+                <h3 style="margin-top: 20px;"> 穿著與行李提醒</h3>
                 <ul class="task-list">
-                    <li>東京市區/鎌倉： 平均 2°C ~ 10°C，天氣晴朗乾燥為主，體感寒冷。</li>
-                    <li>富士山： 氣溫可能低於 0°C，山區風大。</li>
-                    <li>建議： 採洋蔥式穿法，內層發熱衣，中層毛衣，外層防風保暖大衣/羽絨外套。</li>
-                </ul>
-                
-                <h3>行李清單提醒</h3>
-                <ul class="task-list">
-                    <li>必備保暖： 羽絨外套、防風外套、圍巾、手套、毛帽.</li>
-                    <li>電器與卡片：護照、日圓現金、信用卡、Suica卡、充電線/行動電源.</li>
-                    <li>自備用品 (建議)：常備藥品 (止痛藥、腸胃藥、感冒藥).</li>
+                    <li><b>建議：</b> 採洋蔥式穿法，內層發熱衣，中層毛衣，外層防風大衣。</li>
+                    <li><b>必備：</b> 護照、日圓現金、Suica卡、充電線、常備藥品。</li>
+                    <li><b>富士山：</b> Day 6 氣溫極低 (-3°C ~ 5°C)，請準備暖暖包。</li>
                 </ul>
 
                 <h3>住宿與聯繫</h3>
-                <p>
-                    飯店：The Apartment Hotel by Stylio Yoyogi 1<br>
-                    地址：〒151-0053 東京都渋谷区代々木４丁目６−4<br>
-                    入住/退房：16:00/10:00
-                </p>
-
-                <h3>東京必要緊急電話</h3>
-                <ul class="task-list">
-                    <li>警察 (Police)：110</li>
-                    <li>救護車/火警 (Ambulance/Fire)：119</li>
-                    <li>日本旅遊服務中心 (JNTO)：050-3816-2787 (全年無休，24h)</li>
-                </ul>
+                <p>飯店：The Apartment Hotel by Stylio Yoyogi 1<br>
+                   地址：〒151-0053 東京都渋谷区代々木４丁目６−4</p>
             </section>
 
         </main>
@@ -383,101 +281,72 @@
     </footer>
 
     <script>
-        
-        // 4. 待辦事項清單 (To-Do List) 邏輯 - 使用 Local Storage 持久化
-        
-        // 確保 DOM 載入後執行 loadTasks
+        // --- 待辦清單邏輯 ---
         document.addEventListener('DOMContentLoaded', loadTasks);
-
         function getTasks() {
-            // 從 LocalStorage 載入任務，如果沒有則回傳空陣列
             const tasks = localStorage.getItem('tripTasks');
             return tasks ? JSON.parse(tasks) : [];
         }
-
         function saveTasks(tasks) {
-            // 將任務陣列儲存到 LocalStorage
             localStorage.setItem('tripTasks', JSON.stringify(tasks));
         }
-
         function renderTasks() {
             const taskList = document.getElementById('taskList');
             const tasks = getTasks();
-            taskList.innerHTML = ''; // 清空現有清單
-
+            taskList.innerHTML = '';
             tasks.forEach((task, index) => {
                 const li = document.createElement('li');
                 li.className = task.completed ? 'completed' : '';
-                
-                // 複選框
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.checked = task.completed;
                 checkbox.onchange = () => toggleTaskCompleted(index);
-                
-                // 任務文本
                 const textSpan = document.createElement('span');
                 textSpan.textContent = task.text;
-                
-                // 刪除按鈕
                 const deleteBtn = document.createElement('button');
                 deleteBtn.textContent = '❌';
                 deleteBtn.onclick = () => deleteTask(index);
-
                 li.appendChild(checkbox);
                 li.appendChild(textSpan);
                 li.appendChild(deleteBtn);
                 taskList.appendChild(li);
             });
         }
-        
         function addTask() {
             const input = document.getElementById('newTaskInput');
             const text = input.value.trim();
-
             if (text === "") return;
-
             const tasks = getTasks();
             tasks.push({ text: text, completed: false });
             saveTasks(tasks);
-            input.value = ''; // 清空輸入框
+            input.value = '';
             renderTasks();
         }
-
         function toggleTaskCompleted(index) {
             const tasks = getTasks();
             tasks[index].completed = !tasks[index].completed;
             saveTasks(tasks);
             renderTasks();
         }
-        
         function deleteTask(index) {
             const tasks = getTasks();
-            tasks.splice(index, 1); // 移除陣列中的該項任務
+            tasks.splice(index, 1);
             saveTasks(tasks);
             renderTasks();
         }
-
         function clearCompletedTasks() {
             let tasks = getTasks();
-            // 只保留未完成的任務
             tasks = tasks.filter(task => !task.completed);
             saveTasks(tasks);
             renderTasks();
         }
+        function loadTasks() { renderTasks(); }
 
-        function loadTasks() {
-            // 頁面載入完成後，執行一次渲染
-            renderTasks();
-        }
-        
-        // 1. 側邊欄切換功能 (Sidebar Toggle)
+        // --- 介面互動邏輯 ---
         function toggleSidebar() {
             const nav = document.getElementById('sidebar-nav');
             nav.classList.toggle('active'); 
         }
-
-        // 點擊連結後自動關閉側邊欄 (增進手機體驗)
         document.querySelectorAll('#sidebar-nav a').forEach(item => {
             item.addEventListener('click', () => {
                 const nav = document.getElementById('sidebar-nav');
@@ -487,41 +356,30 @@
             });
         });
 
-
-        // 2. Accordion 摺疊功能 (通用於所有 .accordion-item)
+        // --- Accordion 摺疊功能 ---
         const allAccordionItems = document.querySelectorAll('.accordion-item');
-        
         allAccordionItems.forEach(item => {
             item.addEventListener('click', function(e) {
-                // 檢查點擊的目標是否為 header 按鈕
                 if (e.target.closest('.accordion-header')) {
                     const header = e.target.closest('.accordion-header');
                     const currentItem = header.closest('.accordion-item');
                     const content = currentItem.querySelector('.accordion-content');
-                    
                     const isActive = currentItem.classList.contains('active');
-
-                    // 檢查是否是行程表容器，若是，則關閉同組其他項目 (一次只開一個)
                     const isItinerary = currentItem.closest('#accordion-container-itinerary');
 
-                    // 關閉同組所有項目
                     if (isItinerary) {
                         isItinerary.querySelectorAll('.accordion-item').forEach(otherItem => {
                             otherItem.classList.remove('active');
                             otherItem.querySelector('.accordion-content').style.maxHeight = null;
                             otherItem.querySelector('.accordion-header span').textContent = "點擊展開";
                         });
-                    } else {
-                         // 對於單獨的 accordion (如地鐵圖)，只關閉自己
-                         if (isActive) {
-                             currentItem.classList.remove('active');
-                             content.style.maxHeight = null;
-                             currentItem.querySelector('.accordion-header span').textContent = "點擊展開";
-                             return; // 如果是關閉動作，則結束
-                         }
+                    } else if (isActive) {
+                        currentItem.classList.remove('active');
+                        content.style.maxHeight = null;
+                        currentItem.querySelector('.accordion-header span').textContent = "點擊展開";
+                        return;
                     }
 
-                    // 啟用/展開當前項目
                     if (!isActive) {
                         currentItem.classList.add('active');
                         content.style.maxHeight = content.scrollHeight + "px";
@@ -531,48 +389,24 @@
             });
         });
         
-        // 3. 匯率換算器功能
-        // 匯率設定：1 JPY = 0.20 TWD
+        // --- 匯率換算器 ---
         const exchangeRate = 0.20; 
-        
-        // 函數 A: 輸入日幣，換算台幣 (JPY -> TWD)
         function convertCurrencyJPY() {
             const jpyInput = document.getElementById('jpyInput');
             const twdInput = document.getElementById('twdInput');
-            
             const jpyAmount = jpyInput.value;
-
-            if (jpyAmount === "" || isNaN(jpyAmount)) {
-                twdInput.value = "";
-                return;
-            }
-
-            // JPY 換 TWD
+            if (jpyAmount === "" || isNaN(jpyAmount)) { twdInput.value = ""; return; }
             const twdAmount = (parseFloat(jpyAmount) * exchangeRate).toFixed(0); 
-
-            // 輸出到台幣輸入框 (使用本地化格式)
-            twdInput.value = twdAmount.toLocaleString();
+            twdInput.value = parseInt(twdAmount).toLocaleString();
         }
-
-        // 函數 B: 輸入台幣，換算日幣 (TWD -> JPY)
         function convertCurrencyTWD() {
             const twdInput = document.getElementById('twdInput');
             const jpyInput = document.getElementById('jpyInput');
-            
             const twdAmount = twdInput.value;
-            
-            if (twdAmount === "" || isNaN(twdAmount)) {
-                jpyInput.value = "";
-                return;
-            }
-
-            // TWD 換 JPY (除以匯率)
+            if (twdAmount === "" || isNaN(twdAmount)) { jpyInput.value = ""; return; }
             const jpyAmount = (parseFloat(twdAmount) / exchangeRate).toFixed(0); 
-            
-            // 輸出到日幣輸入框 (使用本地化格式)
-            jpyInput.value = jpyAmount.toLocaleString();
+            jpyInput.value = parseInt(jpyAmount).toLocaleString();
         }
-        
     </script>
 </body>
 </html>
